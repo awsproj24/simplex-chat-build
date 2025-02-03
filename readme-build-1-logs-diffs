@@ -1,0 +1,109 @@
+
+
+~/AndroidStudioProjects/simplex-chat/apps/multiplatform (stable-android)
+$ git log -1 --stat
+commit 2c8e33749e48a4d6efff43fac96cba15f5dcba1a (HEAD -> stable-android, tag: v6.2.4-armv7a, origin/stable-android)
+Merge: 6d55518c1 161143add
+Author: Evgeny Poberezkin <evgeny@poberezkin.com>
+Date:   Mon Jan 13 08:41:11 2025 +0000
+
+    Merge branch 'stable' into stable-android
+
+
+
+$ git diff
+diff --git a/apps/multiplatform/android/build.gradle.kts b/apps/multiplatform/android/build.gradle.kts
+index 250616ea5..58d370add 100644
+--- a/apps/multiplatform/android/build.gradle.kts
++++ b/apps/multiplatform/android/build.gradle.kts
+@@ -43,10 +43,10 @@ android {
+             // Provider can"t be the same for different apps on the same device
+             manifestPlaceholders["provider_authorities"] = "chat.simplex.app${rootProject.extra["application_id.suffix"]}.provider"
+         }
+-        release {
+-            isMinifyEnabled = false
+-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+-        }
++//        release {
++//            isMinifyEnabled = false
++//            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
++//        }
+     }
+     kotlinOptions {
+         freeCompilerArgs += "-opt-in=kotlinx.coroutines.DelicateCoroutinesApi"
+@@ -63,11 +63,11 @@ android {
+             path(File("../common/src/commonMain/cpp/android/CMakeLists.txt"))
+         }
+     }
+-    buildTypes {
+-        getByName("release") {
+-            isMinifyEnabled = false
+-        }
+-    }
++//    buildTypes {
++//        getByName("release") {
++//            isMinifyEnabled = false
++//        }
++//    }
+     buildFeatures {
+         buildConfig = true
+     }
+diff --git a/apps/multiplatform/common/build.gradle.kts b/apps/multiplatform/common/build.gradle.kts
+index ad67b7cf1..c6da4262e 100644
+--- a/apps/multiplatform/common/build.gradle.kts
++++ b/apps/multiplatform/common/build.gradle.kts
+@@ -99,24 +99,24 @@ kotlin {
+         implementation("androidx.lifecycle:lifecycle-process:2.8.4")
+       }
+     }
+-    val desktopMain by getting {
+-      dependencies {
+-        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-swing:1.8.0")
+-        implementation("com.github.Dansoftowner:jSystemThemeDetector:3.8") {
+-          exclude("net.java.dev.jna")
+-        }
+-        // For jSystemThemeDetector only
+-        implementation("net.java.dev.jna:jna-platform:5.14.0")
+-        implementation("com.sshtools:two-slices:0.9.0-SNAPSHOT")
+-        implementation("org.slf4j:slf4j-simple:2.0.12")
+-        implementation("uk.co.caprica:vlcj:4.8.3")
+-        implementation("net.java.dev.jna:jna:5.14.0")
+-        implementation("com.github.NanoHttpd.nanohttpd:nanohttpd:efb2ebf85a")
+-        implementation("com.github.NanoHttpd.nanohttpd:nanohttpd-websocket:efb2ebf85a")
+-        implementation("com.squareup.okhttp3:okhttp:4.12.0")
+-      }
+-    }
+-    val desktopTest by getting
++//    val desktopMain by getting {
++//      dependencies {
++//        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-swing:1.8.0")
++//        implementation("com.github.Dansoftowner:jSystemThemeDetector:3.8") {
++//          exclude("net.java.dev.jna")
++//        }
++//        // For jSystemThemeDetector only
++//        implementation("net.java.dev.jna:jna-platform:5.14.0")
++//        implementation("com.sshtools:two-slices:0.9.0-SNAPSHOT")
++//        implementation("org.slf4j:slf4j-simple:2.0.12")
++//        implementation("uk.co.caprica:vlcj:4.8.3")
++//        implementation("net.java.dev.jna:jna:5.14.0")
++//        implementation("com.github.NanoHttpd.nanohttpd:nanohttpd:efb2ebf85a")
++//        implementation("com.github.NanoHttpd.nanohttpd:nanohttpd-websocket:efb2ebf85a")
++//        implementation("com.squareup.okhttp3:okhttp:4.12.0")
++//      }
++//    }
++//    val desktopTest by getting
+   }
+ }
+
+diff --git a/apps/multiplatform/settings.gradle.kts b/apps/multiplatform/settings.gradle.kts
+index ba047edf1..89f73f73d 100644
+--- a/apps/multiplatform/settings.gradle.kts
++++ b/apps/multiplatform/settings.gradle.kts
+@@ -18,4 +18,4 @@ pluginManagement {
+
+ rootProject.name = "app"
+
+-include(":android", ":desktop", ":common")
++include(":android", ":common")
+
+

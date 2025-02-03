@@ -1,0 +1,13 @@
+
+ls -l *
+
+arm64-v8a:
+-rw-r--r--   181646872 Dec 31  1980 libsimplex.so
+-rw-r--r--    14650736 Dec 31  1980 libsupport.so
+
+armeabi-v7a:
+-rw-r--r--   169389340 Dec 31  1980 libsimplex.so
+-rw-r--r--    12322828 Dec 31  1980 libsupport.so
+
+
+

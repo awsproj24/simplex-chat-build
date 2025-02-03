@@ -1,0 +1,961 @@
+     1	
+     2	f-droid.org/en/packages/chat.simplex.app/ 
+     3	version code 268 version 6.2.4 arch armeabi-v7a build log of jan 17 2025
+     4	
+     5	
+     6	== Installed Android Tools ==
+     7	
+     8	2025-01-15 15:03:54,436 DEBUG: Reading 'config.yml'
+     9	2025-01-15 15:03:54,458 INFO: Creating log directory
+    10	2025-01-15 15:03:54,458 INFO: Creating temporary directory
+    11	2025-01-15 15:03:54,458 INFO: Creating output directory
+    12	2025-01-15 15:03:54,541 DEBUG: Getting git vcs interface for https://github.com/simplex-chat/simplex-chat.git
+    13	2025-01-15 15:03:54,541 DEBUG: Checking chat.simplex.app:268
+    14	2025-01-15 15:03:54,542 INFO: Building version 6.2.4 (268) of chat.simplex.app
+
+
+    15	2025-01-15 15:03:54,542 INFO: Running 'sudo' commands in /home/vagrant
+
+    16	2025-01-15 15:03:54,542 DEBUG: > sudo DEBIAN_FRONTEND=noninteractive bash -e -u -o pipefail -x -c apt-get update; apt-get install -y xz-utils zipalign zip; mkdir -m 0755 /nix; chown vagrant /nix; chown -R vagrant /tmp
+    17	+ apt-get update
+    18	Get:1 https://security.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+    19	Get:2 https://debian.osuosl.org/debian bookworm InRelease [151 kB]
+    20	Get:3 https://debian.osuosl.org/debian bookworm-updates InRelease [55.4 kB]
+    21	Get:4 https://debian.osuosl.org/debian bookworm-backports InRelease [59.0 kB]
+    22	Get:5 https://security.debian.org/debian-security bookworm-security/main amd64 Packages [241 kB]
+    23	Get:6 https://security.debian.org/debian-security bookworm-security/main Translation-en [142 kB]
+    24	Get:7 https://debian.osuosl.org/debian bookworm/main amd64 Packages [8792 kB]
+    25	Get:8 https://debian.osuosl.org/debian bookworm/main Translation-en [6109 kB]
+    26	Get:9 https://debian.osuosl.org/debian bookworm-updates/main amd64 Packages [13.5 kB]
+    27	Get:10 https://debian.osuosl.org/debian bookworm-updates/main Translation-en [16.0 kB]
+    28	Get:11 https://debian.osuosl.org/debian bookworm-backports/main amd64 Packages [274 kB]
+    29	Get:12 https://debian.osuosl.org/debian bookworm-backports/main Translation-en [227 kB]
+
+    78	+ mkdir -m 0755 /nix
+    79	+ chown vagrant /nix
+    80	+ chown -R vagrant /tmp
+
+    81	2025-01-15 15:04:20,760 DEBUG: > sudo passwd --lock root
+
+    83	2025-01-15 15:04:23,571 DEBUG: > sudo SUDO_FORCE_REMOVE=yes dpkg --purge sudo
+    87	dpkg: warning: while removing sudo, directory '/etc/sudoers.d' not empty so not removed
+
+    89	2025-01-15 15:04:48,372 INFO: Getting source for revision 161143add0b98e34b85db63fe78b46ccb03539a1
+    90	2025-01-15 15:04:48,373 DEBUG: Directory: build/chat.simplex.app
+    91	2025-01-15 15:04:48,373 DEBUG: > git rev-parse --show-toplevel
+    92	2025-01-15 15:04:48,578 DEBUG: Directory: build/chat.simplex.app
+    93	2025-01-15 15:04:48,578 DEBUG: > git submodule foreach --recursive git reset --hard
+    94	2025-01-15 15:04:48,781 DEBUG: Directory: build/chat.simplex.app
+    95	2025-01-15 15:04:48,782 DEBUG: > git reset --hard
+    96	2025-01-15 15:04:50,789 DEBUG: Directory: build/chat.simplex.app
+    97	2025-01-15 15:04:50,790 DEBUG: > git submodule foreach --recursive git clean -dffx
+    98	2025-01-15 15:04:50,994 DEBUG: Directory: build/chat.simplex.app
+    99	2025-01-15 15:04:50,994 DEBUG: > git clean -dffx
+   100	2025-01-15 15:04:51,097 DEBUG: Directory: build/chat.simplex.app
+   101	2025-01-15 15:04:51,097 DEBUG: > git -c core.askpass=/bin/true -c core.sshCommand=/bin/false -c url.https://.insteadOf=ssh:// -c url.https://u:p@bitbucket.org/.insteadOf=git@bitbucket.org: -c url.https://u:p@bitbucket.org.insteadOf=git://bitbucket.org -c url.https://u:p@bitbucket.org.insteadOf=https://bitbucket.org -c url.https://u:p@github.com/.insteadOf=git@github.com: -c url.https://u:p@github.com.insteadOf=git://github.com -c url.https://u:p@github.com.insteadOf=https://github.com -c url.https://u:p@gitlab.com/.insteadOf=git@gitlab.com: -c url.https://u:p@gitlab.com.insteadOf=git://gitlab.com -c url.https://u:p@gitlab.com.insteadOf=https://gitlab.com -c url.https://u:p@codeberg.org/.insteadOf=git@codeberg.org: -c url.https://u:p@codeberg.org.insteadOf=git://codeberg.org -c url.https://u:p@codeberg.org.insteadOf=https://codeberg.org fetch --prune --prune-tags --force origin
+   102	2025-01-15 15:04:52,203 DEBUG: Directory: build/chat.simplex.app
+   103	2025-01-15 15:04:52,203 DEBUG: > git -c core.askpass=/bin/true -c core.sshCommand=/bin/false -c url.https://.insteadOf=ssh:// -c url.https://u:p@bitbucket.org/.insteadOf=git@bitbucket.org: -c url.https://u:p@bitbucket.org.insteadOf=git://bitbucket.org -c url.https://u:p@bitbucket.org.insteadOf=https://bitbucket.org -c url.https://u:p@github.com/.insteadOf=git@github.com: -c url.https://u:p@github.com.insteadOf=git://github.com -c url.https://u:p@github.com.insteadOf=https://github.com -c url.https://u:p@gitlab.com/.insteadOf=git@gitlab.com: -c url.https://u:p@gitlab.com.insteadOf=git://gitlab.com -c url.https://u:p@gitlab.com.insteadOf=https://gitlab.com -c url.https://u:p@codeberg.org/.insteadOf=git@codeberg.org: -c url.https://u:p@codeberg.org.insteadOf=git://codeberg.org -c url.https://u:p@codeberg.org.insteadOf=https://codeberg.org fetch --prune --tags --force origin
+   104	2025-01-15 15:04:52,808 DEBUG: Directory: build/chat.simplex.app
+   105	2025-01-15 15:04:52,808 DEBUG: > git remote set-head origin --auto
+   106	2025-01-15 15:04:53,513 DEBUG: Directory: build/chat.simplex.app
+   107	2025-01-15 15:04:53,513 DEBUG: > git checkout -f 161143add0b98e34b85db63fe78b46ccb03539a1
+   108	2025-01-15 15:04:54,522 DEBUG: Directory: build/chat.simplex.app
+   109	2025-01-15 15:04:54,522 DEBUG: > git clean -dffx
+   110	2025-01-15 15:04:54,629 DEBUG: Directory: build/chat.simplex.app
+   111	2025-01-15 15:04:54,629 DEBUG: > git rev-parse --show-toplevel
+   112	2025-01-15 15:04:54,833 DEBUG: Directory: build/chat.simplex.app
+   113	2025-01-15 15:04:54,833 DEBUG: > git submodule deinit --all --force
+
+   114	2025-01-15 15:04:55,036 INFO: Running 'init' commands in build/chat.simplex.app
+   115	2025-01-15 15:04:55,037 DEBUG: Directory: build/chat.simplex.app
+   116	2025-01-15 15:04:55,037 DEBUG: > bash -e -u -o pipefail -x -c -- TAG=$(git tag --points-at HEAD | head -n1) && export TAG=${TAG%%-*}; git checkout ${TAG}-armv7a
+   117	/etc/bash.bashrc: line 7: PS1: unbound variable
+   118	++ git tag --points-at HEAD
+   119	++ head -n1
+   120	+ TAG=v6.2.4
+   121	+ export TAG=v6.2.4
+   122	+ TAG=v6.2.4
+   123	+ git checkout v6.2.4-armv7a
+   124	Previous HEAD position was 161143add 6.2.4: ios 259, android 268, desktop 87
+   125	HEAD is now at 2c8e33749 Merge branch 'stable' into stable-android
+
+   126	2025-01-15 15:04:55,344 INFO: Creating local.properties file at build/chat.simplex.app/local.properties
+
+   127	2025-01-15 15:04:55,347 DEBUG: Removing debuggable flags from build/chat.simplex.app
+   128	2025-01-15 15:04:55,416 INFO: Removing specified files
+   129	2025-01-15 15:04:55,417 INFO: Removing images
+   130	2025-01-15 15:04:55,426 INFO: Removing packages
+   131	2025-01-15 15:04:55,431 INFO: Removing docs
+   132	2025-01-15 15:04:55,443 INFO: Removing blog
+   133	2025-01-15 15:04:55,465 INFO: Removing website
+   134	2025-01-15 15:04:55,506 INFO: Cleaned build.gradle.kts of keysigning configs at build/chat.simplex.app/apps/multiplatform/android/build.gradle.kts
+   135	2025-01-15 15:04:55,518 INFO: Running 'prebuild' commands in build/chat.simplex.app
+   136	2025-01-15 15:04:55,518 DEBUG: Directory: build/chat.simplex.app
+   137	2025-01-15 15:04:55,519 DEBUG: > bash -e -u -o pipefail -x -c -- cp -r ./apps/multiplatform/gradle .; sed -i -e '/maven.pkg.jetbrains.space/d' ./apps/multiplatform/{build,settings}.gradle.kts; sed -i -e 's/android.version_code=.*/android.version_code=268/' ./apps/multiplatform/gradle.properties
+   138	/etc/bash.bashrc: line 7: PS1: unbound variable
+   139	+ cp -r ./apps/multiplatform/gradle .
+   140	+ sed -i -e /maven.pkg.jetbrains.space/d ./apps/multiplatform/build.gradle.kts ./apps/multiplatform/settings.gradle.kts
+   141	+ sed -i -e 's/android.version_code=.*/android.version_code=268/' ./apps/multiplatform/gradle.properties
+   142	2025-01-15 15:04:55,789 INFO: Scanning source for common problems...
+   143	2025-01-15 15:04:55,802 INFO: Removing gradle-wrapper.jar at gradle/wrapper/gradle-wrapper.jar
+   144	2025-01-15 15:04:55,871 DEBUG: scanner is configured to use signature data from: 'suss'
+   145	2025-01-15 15:04:55,872 DEBUG: downloading 'https://fdroid.gitlab.io/fdroid-suss/suss.json'
+   146	2025-01-15 15:04:56,479 DEBUG: write 'suss.json' to cache
+   147	2025-01-15 15:04:56,483 DEBUG: next suss.json cache update due in 23:59:59.986204
+   148	2025-01-15 15:04:56,632 INFO: Removing gradle-wrapper.jar at apps/multiplatform/gradle/wrapper/gradle-wrapper.jar
+   149	2025-01-15 15:04:56,769 INFO: Creating source tarball...
+
+   150	2025-01-15 15:05:02,555 INFO: Running 'build' commands in build/chat.simplex.app
+   151	2025-01-15 15:05:02,555 DEBUG: Directory: build/chat.simplex.app
+   152	2025-01-15 15:05:02,556 DEBUG: > bash -e -u -o pipefail -x -c gradle -v; export USER=vagrant; ARCHES="armv7a" ./scripts/android/build-android.sh -gs
+   153	/etc/bash.bashrc: line 7: PS1: unbound variable
+   154	+ gradle -v
+   155	Found 8.7 via distributionUrl
+   156	Downloading missing gradle version 8.7
+   157	cachedir
+   158	/tmp/tmp.Oc4Bu8EBMo/gradle-8.7-bin.zip: OK
+   159	Running /opt/gradle/versions/8.7/bin/gradle -v
+   160	
+   161	Welcome to Gradle 8.7!
+   162	
+   163	Here are the highlights of this release:
+   164	 - Compiling and testing with Java 22
+   165	 - Cacheable Groovy script compilation
+   166	 - New methods in lazy collection properties
+   167	
+   168	For more details see https://docs.gradle.org/8.7/release-notes.html
+   169	
+   170	
+   171	------------------------------------------------------------
+   172	Gradle 8.7
+   173	------------------------------------------------------------
+   174	
+   175	Build time:   2024-03-22 15:52:46 UTC
+   176	Revision:     650af14d7653aa949fce5e886e685efc9cf97c10
+   177	
+   178	Kotlin:       1.9.22
+   179	Groovy:       3.0.17
+   180	Ant:          Apache Ant(TM) version 1.10.13 compiled on January 4 2023
+   181	JVM:          17.0.13 (Debian 17.0.13+11-Debian-2deb12u1)
+   182	OS:           Linux 6.1.0-25-amd64 amd64
+   183	
+   184	+ export USER=vagrant
+   185	+ USER=vagrant
+   186	+ ARCHES=armv7a
+   187	+ ./scripts/android/build-android.sh -gs
+   188	/tmp/tmp.77n2VDkIkz/nix-install: OK
+   189	downloading Nix 2.22.0 binary tarball for x86_64-linux from 'https://releases.nixos.org/nix/nix-2.22.0/nix-2.22.0-x86_64-linux.tar.xz' to '/tmp/nix-binary-tarball-unpack.KHXQ4l8tlS'...
+   190	  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+   191	                                 Dload  Upload   Total   Spent    Left  Speed
+   192	  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0100 21.9M  100 21.9M    0     0  12.0M      0  0:00:01  0:00:01 --:--:-- 12.0M
+   193	Note: a multi-user installation is possible. See https://nixos.org/manual/nix/stable/installation/installing-binary.html#multi-user-installation
+   194	performing a single-user installation of Nix...
+   195	copying Nix to /nix/store...
+   196	
+   197	installing 'nix-2.22.0'
+   198	building '/nix/store/sbb4778cl44hpqdbnvg0k0gykrhg7vgj-user-environment.drv'...
+   199	unpacking 1 channels...
+   200	modifying /home/vagrant/.profile...
+   201	
+   202	Installation finished!  To ensure that the necessary environment
+   203	variables are set, either log in again, or type
+   204	
+   205	  . /home/vagrant/.nix-profile/etc/profile.d/nix.sh
+   206	
+   207	in your shell.
+   208	warning: Git tree '/home/vagrant/build/chat.simplex.app' is dirty
+   209	copying path '/nix/store/7nsn9ldv2d7d2m0mcld46gq879p0csb7-source' from 'https://cache.nixos.org'...
+   210	trace: haskell-nix.haskellLib.cleanGit: /nix/store/bccrkzfqfnha4rxgq96pqpx0hc312s7q-source does not seem to be a git repository,
+   211	assuming it is a clean checkout.
+   212	trace: WARNING: No materialized dummy-ghc-data.  mkdir /nix/store/k2jy626jzzkz49di4rp8acp6w9arvbir-source/materialized/dummy-ghc/armv7a-unknown-linux-androideabi-armv7a-unknown-linux-androideabi-ghc-8.10.7-x86_64-linux
+   213	copying path '/nix/store/w0y20mj5fj517bmxbl4arg33xid9d2r5-glibc-locales-2.35-224' from 'https://cache.nixos.org'...
+   214	copying path '/nix/store/40ys614j31ka19jbaiq112405l7acgwv-nss-cacert-3.86' from 'https://cache.nixos.org'...
+   215	copying path '/nix/store/37vdk3lmbr5wzn11xbzc77dxm4j0hl59-busybox-static-x86_64-unknown-linux-musl-1.35.0' from 'https://cache.nixos.org'...
+   216	copying path '/nix/store/f2fghgdx2shmnycwhjr8sfjz59g08vqh-hook' from 'https://cache.nixos.org'...
+   217	copying path '/nix/store/53yy0dh3b129paci18dd1557pipbymf8-nix-2.11.1-man' from 'https://cache.nixos.org'...
+   218	copying path '/nix/store/v5rz7asdkxm8yxa8yx99dj9ql4n1qg9c-nlohmann_json-3.11.2' from 'https://cache.nixos.org'...
+   219	copying path '/nix/store/34xlpp3j3vy7ksn09zh44f1c04w77khf-libunistring-1.0' from 'https://cache.nixos.org'...
+   220	copying path '/nix/store/ds88mq094ic3dsvfdgf1cw08vfsi19fq-pkg-config-0.29.2-doc' from 'https://cache.nixos.org'...
+   221	copying path '/nix/store/4pdbpa9mg3yvhqj2xr19rr0kxki4nb6r-pkg-config-0.29.2-man' from 'https://cache.nixos.org'...
+   222	copying path '/nix/store/4z5cry7kymimlib2v4kvw6jfhn64kapz-hpack-0.35.0.tar.gz' from 'https://cache.nixos.org'...
+   223	copying path '/nix/store/qqqm88r366b1c7my6j31iac0ah3pv6qh-iana-etc-20220915' from 'https://cache.nixos.org'...
+   224	copying path '/nix/store/1fbi84d3yx5jm8i9jqwq2gn0v07w9hcw-mailcap-2.1.53' from 'https://cache.nixos.org'...
+   225	copying path '/nix/store/y0jj7m01v5mkgjdjpr46cf1pb2hm2qha-tzdata-2022g' from 'https://cache.nixos.org'...
+   226	copying path '/nix/store/9ral6v9m1gsr5lb2m00cxw2p3xpyhbva-Cabal-3.8.1.0.tar.gz' from 'https://cache.nixos.org'...
+   227	copying path '/nix/store/iczm0mcn9l9ya7672dih42shnib3wlqa-Cabal-syntax-3.8.1.0.tar.gz' from 'https://cache.nixos.org'...
+   228	copying path '/nix/store/rdw4vzgk42vhh0wa8fbd4r99m0pqajnh-cabal-install-3.8.1.0.tar.gz' from 'https://cache.nixos.org'...
+   229	copying path '/nix/store/yd5apzwabm09k4v4g08qvf8nrlwbzif1-D5123.diff' from 'https://cache.nixos.org'...
+   230	copying path '/nix/store/9kjpqdkg512vvsjnyp33vacmgb3zlszs-Glob-0.10.2.tar.gz' from 'https://cache.nixos.org'...
+   231	copying path '/nix/store/7b533wadjds2q06y444wps6xlq8wq7za-HTTP-4000.4.1.tar.gz' from 'https://cache.nixos.org'...
+
+   614	copying path '/nix/store/5axq6aw8j3vcs2m7gi440cwpcckl7ql9-python3-3.10.9' from 'https://cache.nixos.org'...
+   615	copying path '/nix/store/44s3rf0mqb5ch4y209kgcnmw6ansjrx8-stdenv-linux' from 'https://cache.nixos.org'...
+   616	copying path '/nix/store/6h7an1m4l4zx9bjpr86pmayx0x7c6vvl-libass-0.16.0' from 'https://cache.nixos.org'...
+   617	copying path '/nix/store/x6dssvkjhqljg12lgsmd7jm5bgh98x60-stdenv-linux' from 'https://cache.nixos.org'...
+   618	copying path '/nix/store/4mkr15glvxawmvmadj7vhxpqndwb6rpg-nix-2.11.1' from 'https://cache.nixos.org'...
+   619	copying path '/nix/store/6346fpq667413xy2fhk29lc16wzsnxk9-zlib-1.2.13-dev' from 'https://cache.nixos.org'...
+   620	copying path '/nix/store/vrgc3z5lzbsmhd48bzng0vxw7xi4f10i-zstd-1.5.2-bin' from 'https://cache.nixos.org'...
+   621	copying path '/nix/store/a252ia91b9d7p3r8gync1mq1s7g5l00c-gobject-introspection-1.74.0' from 'https://cache.nixos.org'...
+   622	copying path '/nix/store/p00dh2ffksf293fiahlzhjz0bipffbgz-pango-1.50.12' from 'https://cache.nixos.org'...
+   623	copying path '/nix/store/113r432ia7vfgffxba6pzlx87maii6cj-autoconf-2.71' from 'https://cache.nixos.org'...
+   624	copying path '/nix/store/27fyr4mclajhlcqv9gwf6vz00hmkxc4v-automake-1.16.5' from 'https://cache.nixos.org'...
+   625	copying path '/nix/store/n2a232gqrlc8fi4nrv0dlxcl5cs6da3h-openssl-3.0.8-bin' from 'https://cache.nixos.org'...
+   626	copying path '/nix/store/nk6qbz675a3jmlmj05833grk43jsb36w-ffmpeg-4.4.2' from 'https://cache.nixos.org'...
+
+   627	building '/nix/store/0fxji796f137bdfmh5c3x71ls88af2ps-armv7a-unknown-linux-androideabi-pkg-config-wrapper-0.29.2.drv'...
+   628	building '/nix/store/kilcq1sbzljanpnf52fffnp95s88xwp6-cabal.project.drv'...
+   629	building '/nix/store/qr2b992fjjbnna0ifnv9s1khxjzlxrpa-default-Setup-src.drv'...
+   630	building '/nix/store/3p9ihzsx73pn2ga5bcgkx7phpiajgxkn-dummy-ghc.drv'...
+   631	building '/nix/store/l9qlmzs4rwkig45nyg7ps4h9dsm8iwfx-dummy-ghc.drv'...
+   632	building '/nix/store/bx0nshfrprnss5ddyigvzdnpqkh6dxgj-hscolour-1.24.4-src.drv'...
+   633	building '/nix/store/hxy1w3w53kybd0hqjg1c5apln16vv0z0-pkg-config-wrapper-0.29.2.drv'...
+   634	building '/nix/store/jnl139vyqjid1m0yq54nh4xqc58253pi-pkg-config-wrapper-0.29.2.drv'...
+   635	copying path '/nix/store/nzas5vf1v19avylyvdfr2pnbpxdpps09-gobject-introspection-wrapped-1.74.0' from 'https://cache.nixos.org'...
+   636	copying path '/nix/store/lyxids8klmindjf15gikkkkg6vq1f4d9-kbd-2.5.1' from 'https://cache.nixos.org'...
+   637	copying path '/nix/store/40mzr00j7sjvwggd9pckfhk8qx4wnl99-openssl-3.0.8-dev' from 'https://cache.nixos.org'...
+   638	building '/nix/store/rrq0vpmqhjjbw8h3yh343nmwsadaixlp-aeson-aab7b5a.drv'...
+   639	building '/nix/store/wkfmxzi827s3vnwlm7k46k5kfs8vkbhg-android-support-9aa09f1.drv'...
+   640	building '/nix/store/vyj00qbknfyzdswcmc99yhz6fnz2l6nm-direct-sqlcipher-f814ee6.drv'...
+   641	building '/nix/store/1l650q40lpg9c1v1x22cambindna3cwr-hackage-db-f3b9240.drv'...
+   642	building '/nix/store/40ml3szsr3yvy0p89bqcplglb8xnsf0j-haskell-terminal-f708b00.drv'...
+   643	building '/nix/store/58lm0y83dgqcjc8v7v2inp3kah9fnawp-hs-socks-a30cc7a.drv'...
+   644	building '/nix/store/n4ym4l9i45zm6rvg8k5gfk7jhcgsj40y-simplexmq-426bf68.drv'...
+   645	building '/nix/store/5y5f9pw2bc59ivm5mzyw1sx2mdjdmdqy-sqlcipher-simple-a46bd36.drv'...
+   646	building '/nix/store/ikaqvyhz43a3p2kqg7xl6h7b6895jyxw-wai-2f6e5aa.drv'...
+   647	building '/nix/store/qnc1j6srcv8hl5qv893z5g14q49m6ffi-wai-ec5e017.drv'...
+   648	building '/nix/store/bd9jcpd11npi23rn42ii9sn1p2i953gp-zip-bd421c6.drv'...
+   649	copying path '/nix/store/9w46gdjii8nk5ga5qswapa3wxlyn1hd5-tracker-3.4.2' from 'https://cache.nixos.org'...
+   650	copying path '/nix/store/aar4izry5b8nlv334nxcm7c85ii7649a-curl-7.86.0-dev' from 'https://cache.nixos.org'...
+   651	copying path '/nix/store/ljiy7dcl4g5qfpg1dn67z49lh5wxsszw-systemd-minimal-251.11' from 'https://cache.nixos.org'...
+   652	building '/nix/store/116xnp6qj015wc9b502fzgq48ckpcb2y-source-repository-package.drv'...
+   653	building '/nix/store/9i4d8hgnf43xdgv0l5vk97z47n5cmar4-source-repository-package.drv'...
+   654	building '/nix/store/w9xl7xkqx4vkmk306kz4gdgh5c5p4bmv-source-repository-package.drv'...
+   655	building '/nix/store/kispm49jbifzni7yaaly43dq2pms6zcy-1.cabal.drv'...
+   656	building '/nix/store/x66ikcw8ixzfh7l5n26cqr5qhd7hc2ma-1.cabal.drv'...
+   657	building '/nix/store/yyw2ij5ap9h8cacql5davcs4s456c0h3-1.cabal.drv'...
+   658	building '/nix/store/2626mwjm7l6dl8ypwji89hx7wfpmwamr-4.cabal.drv'...
+   659	building '/nix/store/40aq4hyc6yvgqj25kp2pdrrqbnn4v0vy-binary-0.8.8.0.tar.gz.drv'...
+   660	building '/nix/store/2a2ky4fqqfc8bqcrdhi7gh8mg5aijiv1-containers-0.6.5.1.tar.gz.drv'...
+   661	building '/nix/store/s8l0x2zi91laz0fjnvs33rmzvrma29l4-directory-1.3.6.0.tar.gz.drv'...
+   662	building '/nix/store/7vj1rki9zq5csg592by3vxcw21xfn16s-filepath-1.4.2.1.tar.gz.drv'...
+   663	building '/nix/store/kmacf3151av50ikdvbb89x5q5vmc8vsh-ghc-8.4.4-x86_64-deb8-linux.tar.xz.drv'...
+   664	building '/nix/store/59jznrpbdsqw5vdaiz63apfw4gvpv244-microlens-0.4.13.0.tar.gz.drv'...
+
+
+  1400	building '/nix/store/748y29p55hj31fzm7631b6n5ch8571vh-nix-tools-exe-hackage-to-nix-0.1.0.0.drv'...
+  1401	building '/nix/store/kl0lkr9nlhy7jifqfl6yhc4mc6nvhjnl-nix-tools-exe-make-install-plan-0.1.0.0-ghc-8.10.7-env.drv'...
+  1402	building '/nix/store/alz2blngalnlxvbwd74bbhsjk83qkjww-nix-tools-exe-plan-to-nix-0.1.0.0-ghc-8.10.7-env.drv'...
+  1403	building '/nix/store/40vyng9fk66ydvrn6maizzry884y5jrm-nix-tools-exe-stack-to-nix-0.1.0.0-ghc-8.10.7-env.drv'...
+  1404	building '/nix/store/496vx3zsa6fmjzl8vyr4h3rzh5id5h5g-nix-tools-exe-hashes-to-nix-0.1.0.0.drv'...
+  1405	building '/nix/store/f94sb81g9kgmskc9d284pjv7s8dwv5l2-nix-tools-exe-lts-to-nix-0.1.0.0.drv'...
+  1406	building '/nix/store/85jpq2lhnj45sdkbsjp82iz0qw9zci7f-nix-tools-exe-stack-repos-0.1.0.0.drv'...
+  1407	building '/nix/store/hkhgrqmkryh48sg48v26kfprzy581d5n-nix-tools-exe-make-install-plan-0.1.0.0.drv'...
+  1408	building '/nix/store/2w7mbyr6fwb0v3kfgdd9mnwz48xk1rjz-nix-tools-exe-plan-to-nix-0.1.0.0.drv'...
+  1409	building '/nix/store/i76s5k9hf1rqpkckp86mqv7fgfx5k38g-nix-tools-exe-stack-to-nix-0.1.0.0.drv'...
+  1410	building '/nix/store/smyqimg5mxi2amy6dk5vizdki7wh5dj1-nix-tools.drv'...
+  1411	building '/nix/store/5di3hlf2h3kqs3sk3s968j7cmcjga7zl-01-index.tar.gz-at-2023-12-12T000000Z.drv'...
+  1412	building '/nix/store/myc0m92i1gl5zkfnbbg054ak346zxg2n-hackage-repo-hackage.haskell.org.drv'...
+  1413	building '/nix/store/nzi6l2v76qvd9zjixa8wvwzlhilaixlp-cabal-bootstrap-index-tarball-hackage.haskell.org.drv'...
+  1414	building '/nix/store/as58nd4mhwa5akja4jdnl7y9n5gl5slw-dot-cabal.drv'...
+  1415	building '/nix/store/fsw426mlz6zyi5vgb27qp3scksddpxx2-dummy-data-armv7a-unknown-linux-androideabi-ghc-8.10.7.drv'...
+  1416	building '/nix/store/w7lfnr9y593gac2ws246lkkg1kdl6jg7-dummy-armv7a-unknown-linux-androideabi-ghc-8.10.7.drv'...
+  1417	building '/nix/store/m6i4db3v2vbzw28qbnb4wb9ayh06hwd8-dummy-pkg-armv7a-unknown-linux-androideabi-ghc-8.10.7.drv'...
+  1418	building '/nix/store/niwi5izdpsknlclbbpmynjqpg41zb7i8-haskell-project-plan-to-nix-pkgs.drv'...
+  1419	building '/nix/store/xkjwxbsgzalm49vgxlx7pri373mh2zmz-dummy-ghc-8.10.7.drv'...
+  1420	building '/nix/store/3r1i4phw4k9nx84pdmwzlzi3z8h3999m-dummy-pkg-ghc-8.10.7.drv'...
+  1421	building '/nix/store/varawl69aapdiimkbpr35c5b55lxa2kf-haskell-project-plan-to-nix-pkgs.drv'...
+  1422	these 553 derivations will be built:
+  1423	  /nix/store/h010wnlwwdhk9fm5vm43far3z5qg71id-armv7a-unknown-linux-androideabi-default-Setup-setup-config.drv
+  1424	  /nix/store/3dj1kyby8529p2fnbrjjg0nbb16yka1y-armv7a-unknown-linux-androideabi-default-Setup-setup.drv
+  1425	  /nix/store/ddq3jl626yb1ybg0hdwbqw0pmf3826n2-ghci-lib-ghci-8.10.7-config.drv
+  1426	  /nix/store/1db2amni36kfz8p6qsqyfgbsc3av8q5w-ghci-lib-ghci-8.10.7-ghc-8.10.7-env.drv
+  1427	  /nix/store/d770gxpmn9cw2aikan2hhi6j2l5xm3kr-ghci-lib-ghci-8.10.7.drv
+  1428	  /nix/store/qxk016s76mmc0l5ja85yqx7g4lsaydji-network-lib-network-2.8.0.1-config.drv
+  1429	  /nix/store/bh2va395g77mqwij5g9mk71bg5b3qwgk-network-2.8.0.1-setup-config.drv
+  1430	  /nix/store/9ia41f8qrh6gg5dsqlb0dqxqhgqi00j6-network-2.8.0.1-setup.drv
+  1431	  /nix/store/abr898c4ldbcnnp6b4ynyaaihwwlxbiv-network-lib-network-2.8.0.1-ghc-8.10.7-env.drv
+  1432	  /nix/store/wsz14rwr8ph1dbys0w2xxxyf32db3lqa-network-lib-network-2.8.0.1.drv
+  1433	  /nix/store/v28s8qsvifcgsanwvin5gmvckdbkzfh3-libiserv-lib-libiserv-8.10.7-config.drv
+  1434	  /nix/store/yg4q8xvx18rrbl0dn7i58gkczq29qzzj-libiserv-lib-libiserv-8.10.7-ghc-8.10.7-env.drv
+  1435	  /nix/store/qygskpbfqwx4c3n59yy4h3di64a2x0m4-libiserv-lib-libiserv-8.10.7.drv
+  1436	  /nix/store/7zly8z6fam1mjkhlxll9a4pzsbfvxnmy-iserv-proxy-exe-iserv-proxy-8.10.7-config.drv
+  1437	  /nix/store/f0kcbnblllx8cdlyh0y0ybhwcwaa6khp-iserv-proxy-exe-iserv-proxy-8.10.7-ghc-8.10.7-env.drv
+  1438	  /nix/store/9kxx3f8dapzg47l1p7481lbk0vb3g348-iserv-proxy-exe-iserv-proxy-8.10.7.drv
+  1439	  /nix/store/brpqas07j06k0q5b62hdzfgyf31c24h1-armv7a-unknown-linux-androideabi-ghc-8.10.7-configured-src.drv
+  1440	  /nix/store/mm1wg6dg6zdrx67c3lvsigfv4qjzkxr3-armv7a-unknown-linux-androideabi-ghci-lib-ghci-8.10.7-config.drv
+  1441	  /nix/store/my5sk58ms4qmig0b83ffigb0lg987ida-ghci-lib-ghci-8.10.7-armv7a-unknown-linux-androideabi-ghc-8.10.7-env.drv
+  1442	  /nix/store/g7lfilyc8dlhd5n4h82sw4j00gidcvln-ghci-lib-ghci-armv7a-unknown-linux-androideabi-8.10.7.drv
+  1443	  /nix/store/yfz090hn9zyp418wjqvvl67cr4wixwyp-armv7a-unknown-linux-androideabi-network-lib-network-2.8.0.1-config.drv
+  1444	  /nix/store/hd2qypwp8l1v5s8qdj7fdajx9w7xy9gb-network-lib-network-2.8.0.1-armv7a-unknown-linux-androideabi-ghc-8.10.7-env.drv
+  1445	  /nix/store/znrnsid6m4m9ys2hwqshafyr22i8fad4-network-lib-network-armv7a-unknown-linux-androideabi-2.8.0.1.drv
+  1446	  /nix/store/qgzkhxzv8866h5pv3n405qn8dg604q8q-armv7a-unknown-linux-androideabi-libiserv-lib-libiserv-8.10.7-config.drv
+  1447	  /nix/store/3nly1s41gwvw1l87kw9i1nijbyx5i126-libiserv-lib-libiserv-8.10.7-armv7a-unknown-linux-androideabi-ghc-8.10.7-env.drv
+  1448	  /nix/store/dad7fh10vacy3dji6qrzd3f7lg1dyq9d-libiserv-lib-libiserv-armv7a-unknown-linux-androideabi-8.10.7.drv
+  1449	  /nix/store/pkfbn7w99il48mdf1ndnc3fayykvii46-armv7a-unknown-linux-androideabi-remote-iserv-exe-remote-iserv-8.10.7-config.drv
+  1450	  /nix/store/a4sxk5glr3h2566kxsrv8cqmrhqvyfm3-remote-iserv-exe-remote-iserv-8.10.7-armv7a-unknown-linux-androideabi-ghc-8.10.7-env.drv
+  1451	  /nix/store/zi15zh3g6m1d4ib4x1bbb7c2jfq0kkc3-remote-iserv-exe-remote-iserv-armv7a-unknown-linux-androideabi-8.10.7.drv
+  1452	  /nix/store/g03ildj0sll6jj55b7nzcl5gmpvx17gs-iserv-wrapper.drv
+  1453	  /nix/store/hmad9j75fzmrl369n96b54drm6ap5fwd-armv7a-unknown-linux-androideabi-base-orphans-lib-base-orphans-0.9.1-config.drv
+  1454	  /nix/store/mnv72y2p4lwk4rq04msh8w1nckwnn16y-base-orphans-lib-base-orphans-0.9.1-armv7a-unknown-linux-androideabi-ghc-8.10.7-env.drv
+  1455	  /nix/store/c6jbhz47g0114cw2hvx9rlj7q9ikw3gq-base-orphans-lib-base-orphans-armv7a-unknown-linux-androideabi-0.9.1.drv
+  1456	  /nix/store/nhf2qnykkqyc5s1n80phr95pzz7whzki-time-1.12.2.tar.gz.drv
+  1457	  /nix/store/wc3k4p8fslikfhnmcz88qgsl5css6a15-time-1.12.2-setup-config.drv
+  1458	  /nix/store/0yahzh2wspwkh4khnnjmj95n1xsf256l-time-1.12.2-setup.drv
+  1459	  /nix/store/dns6wr15642s99arqs1vc5ialc17b593-armv7a-unknown-linux-androideabi-time-lib-time-1.12.2-config.drv
+  1460	  /nix/store/13zb0c2m5j58ss9sjvzyjis9f6mhnvib-time-lib-time-1.12.2-armv7a-unknown-linux-androideabi-ghc-8.10.7-env.drv
+  1461	  /nix/store/dh4a4wmny2w1hhik40m4lp6gjqdvimca-time-lib-time-armv7a-unknown-linux-androideabi-1.12.2.drv
+  1462	  /nix/store/gssbw9ly7z1b4g1d3n1m3nrb4jsnlwi9-armv7a-unknown-linux-androideabi-bytestring-lib-bytestring-0.10.12.0-config.drv
+
+  1959	  /nix/store/q3l3nxndh8ldx2pgp2dgsw5yxsy5z42f-linux-headers-android-common-11-5.4.drv
+  1960	  /nix/store/388a7xdvy8qx63zk7d237n4kwd6b8dwg-aarch64-bionic-prebuilt-ndk-release-r23.drv
+  1961	  /nix/store/4zyzxnaq32h4vc2iqx4fvcmnig0y8r38-llvm-binutils-12.0.1.drv
+  1962	  /nix/store/3528jysslcnnziqi4arckyq9w3clzgg4-aarch64-unknown-linux-android-llvm-binutils-wrapper-12.0.1.drv
+  1963	  /nix/store/skmi9xk64y3fjgkml0vyv774l9fwkys2-aarch64-unknown-linux-android-clang-wrapper-12.0.1.drv
+  1964	  /nix/store/kd207gavv20ypinsj4ym9r15ymar784x-stdenv-linux.drv
+  1965	  /nix/store/vxdb76g3cbfg4xlkdnlg6r6ab95kk7gm-compiler-rt-libc-aarch64-unknown-linux-android-12.0.1.drv
+  1966	  /nix/store/ab8z3rz16bpx3hyskcgzy53jaizngizp-aarch64-unknown-linux-android-clang-wrapper-12.0.1.drv
+  1967	  /nix/store/58h0mprlbb9gl7gsg0hkdx2fg5xch82v-stdenv-linux.drv
+  1968	  /nix/store/c6q1w1v1fdd61babizvrvq5bkrqnl8m5-libunwind-aarch64-unknown-linux-android-12.0.1.drv
+  1969	  /nix/store/b1sfnxbm2zl22aaz0zn1s2z0hwaq688j-libcxxabi-aarch64-unknown-linux-android-12.0.1.drv
+  1970	  /nix/store/vjrm0sa6i61dz99bhk8n9lvynx3ifx88-libcxx-aarch64-unknown-linux-android-12.0.1.drv
+  1971	  /nix/store/ska6k5c6qvs8brww4rjja0fm9lip5i8b-aarch64-unknown-linux-android-clang-wrapper-12.0.1.drv
+  1972	  /nix/store/zpgmqqa0szgmv24y5vmbawwsv0jky046-stdenv-linux.drv
+  1973	  /nix/store/dx7qn3yygb2s80cal3q4zhvdl8zj8wya-libiconv-aarch64-unknown-linux-android-1.16.drv
+  1974	  /nix/store/mnj1gr75mar1gclk26kmacavmskr1fnp-libffi-armv7a-unknown-linux-androideabi-3.4.4.drv
+  1975	  /nix/store/0k759bqnjwxr0h3n2xqn1vb5bicpbgd5-simplex-chat-lib-simplex-chat-armv7a-unknown-linux-androideabi-6.2.4.0.drv
+  1976	these 228 paths will be fetched (422.14 MiB download, 2713.26 MiB unpacked):
+  1977	  /nix/store/p6f5wrczg9fyh9182cz62bp1ib1myrlq-OneTuple-0.4.1.1.tar.gz
+  1978	  /nix/store/3pl74m6ddhh94q4q51xh9slcj7ribh8h-Only-0.1.tar.gz
+  1979	  /nix/store/d668w8yvplc8gqn925kn4x9kxbd6d9bg-QuickCheck-2.14.3.tar.gz
+  1980	  /nix/store/hgpmlvlmy4fxrj44rc8h69nkjmgimpdf-SDL2-2.24.2
+  1981	  /nix/store/hzwyzjaki6n1mjvqnjkdh5i2wja3w2l2-SDL2-2.24.2
+  1982	  /nix/store/14qvqakcmb93q7sdl47vg81hcan3ls52-SDL2_image-2.0.5
+  1983	  /nix/store/4fvhi5v775y9qr7izx4g8slpm3yrjfy8-ansi-terminal-0.11.5.tar.gz
+  1984	  /nix/store/f1sq5d79bd4x4sy97z4ivwp5s5xc68d7-ansi-terminal-types-0.11.5.tar.gz
+  1985	  /nix/store/91b9rq76vqswb9xl87bq44agk14wrxy3-assoc-1.1.tar.gz
+  1986	  /nix/store/zcfkav5mq2fcqmljmwcr011smnqy9q05-async-2.2.5.tar.gz
+  1987	  /nix/store/6vwdsp3zf0ah9fqi7zmwk1wz3v8q9b7i-attr-2.5.1-bin
+  1988	  /nix/store/km5ydjakambwvgwjl68gnfybyic66ss0-attr-2.5.1-dev
+
+  2190	  /nix/store/595fpca3rb7n5cm5fb4vfrwsszvgwg9f-vector-0.13.1.0.tar.gz
+  2191	  /nix/store/904b5hczm5npsi1qik85d11y76gbm7ac-vector-stream-0.1.0.0.tar.gz
+  2192	  /nix/store/yi360yjl10943yj280j59bvzsx9ndsdz-virglrenderer-0.10.3
+  2193	  /nix/store/lknh0swa14lj2qx7lyp2f4zfs0v2dzif-vte-0.70.2
+  2194	  /nix/store/a0wr3czfjsmcyalkwxyvsn8h1bc7da2c-vulkan-loader-1.3.231.0
+  2195	  /nix/store/iknwll30vsmpvzjb41yxsvwni7qp6drz-wavpack-5.5.0
+  2196	  /nix/store/4pxvdlhqh8szhy4hidp33ri06fsxbrp1-wayland-protocols-1.27
+  2197	  /nix/store/bw0grdfw9vw74kzw16wy5hnd79xxr2g6-webrtc-audio-processing-0.3.1
+  2198	  /nix/store/lq70580vmggakxf8g0fx303d1ar4xw5c-wolfssl-5.5.3-lib
+  2199	  /nix/store/sw97ms212hbxmi29biws2g4i3ysj4afy-xorgproto-2021.5
+  2200	  /nix/store/pm2vm8bxdk99hs2h07cfiysj1g9iw7pz-xz-5.2.7-dev
+  2201	  /nix/store/1i4qpms3prjxhdqwxcidf0isp8prw52b-yaml-0.11.11.2.tar.gz
+  2202	  /nix/store/p2zghbbz0xg82yyl9fkjvbvy3i68rrfl-zip-3.0
+  2203	  /nix/store/3yhi12pgsmv2dz0x2ialvjw51lnv4jw8-zlib-1.2.13.tar.gz
+  2204	  /nix/store/s35wdz080hmv78v693l7i0mwhpfs6mjk-zstd-0.1.3.0.tar.gz
+  2205	copying path '/nix/store/hikpgpl320xp21yxy3g2lvabqxaxr30g-tree-2.0.4' from 'https://cache.nixos.org'...
+  2206	copying path '/nix/store/p2zghbbz0xg82yyl9fkjvbvy3i68rrfl-zip-3.0' from 'https://cache.nixos.org'...
+  2207	copying path '/nix/store/4fvhi5v775y9qr7izx4g8slpm3yrjfy8-ansi-terminal-0.11.5.tar.gz' from 'https://cache.nixos.org'...
+  2208	copying path '/nix/store/zcfkav5mq2fcqmljmwcr011smnqy9q05-async-2.2.5.tar.gz' from 'https://cache.nixos.org'...
+  2209	copying path '/nix/store/d2qfyzzq78ipsb7wrirkw7yw5kydsqwa-composition-1.0.2.2.tar.gz' from 'https://cache.nixos.org'...
+  2210	copying path '/nix/store/8pw2ba6iq3adj9y2cvcswba3dgncln4c-constraints-0.13.4.tar.gz' from 'https://cache.nixos.org'...
+  2211	copying path '/nix/store/kslb36wifbql2j3mbicbmkahgq5r69nf-crypton-0.34.tar.gz' from 'https://cache.nixos.org'...
+  2212	copying path '/nix/store/6n976pbknjq48iwh1zb83cswbwimqa5w-data-default-0.7.1.1.tar.gz' from 'https://cache.nixos.org'...
+  2213	copying path '/nix/store/kq7xyimifm6pps2fl6c15wyb7g6jmnzd-directory-1.3.7.1.tar.gz' from 'https://cache.nixos.org'...
+
+  2973	building '/nix/store/nh52lbl564f96pcdq8s3vg52b6r8flcb-zip-lib-zip-2.0.0-armv7a-unknown-linux-androideabi-ghc-8.10.7-env.drv'...
+  2974	building '/nix/store/abg6hc1kd0d171bwnnb8dir716dagdr1-monad-logger-lib-monad-logger-armv7a-unknown-linux-androideabi-0.3.40.drv'...
+  2975	building '/nix/store/i5nssvjdsiz5rpi755xslhkkay0bhwwm-zip-lib-zip-armv7a-unknown-linux-androideabi-2.0.0.drv'...
+  2976	building '/nix/store/i6fjad6la152fhp4vi6l899dqpr5bdb4-armv7a-unknown-linux-androideabi-simple-logger-lib-simple-logger-0.1.1-config.drv'...
+  2977	building '/nix/store/ki6y5bsx3d76m9dj17ww3i2x8whrmhiy-simple-logger-lib-simple-logger-0.1.1-armv7a-unknown-linux-androideabi-ghc-8.10.7-env.drv'...
+  2978	building '/nix/store/6m3b22vzmnzpdjpjncqmcz3r0884696b-simple-logger-lib-simple-logger-armv7a-unknown-linux-androideabi-0.1.1.drv'...
+  2979	building '/nix/store/kqyzh7ca14iz3x317hqx430lf80iggf4-armv7a-unknown-linux-androideabi-simplexmq-lib-simplexmq-6.2.2.0-config.drv'...
+  2980	building '/nix/store/vfgqs8xikhxv64flpbrbif2dqbgn749h-simplexmq-lib-simplexmq-6.2.2.0-armv7a-unknown-linux-androideabi-ghc-8.10.7-env.drv'...
+  2981	building '/nix/store/4wqdzg1c0b9i6zdyqz2s4rjp0jzwahi4-simplexmq-lib-simplexmq-armv7a-unknown-linux-androideabi-6.2.2.0.drv'...
+  2982	building '/nix/store/zdl5nkh90sv9wccabika02mcil9ija2g-armv7a-unknown-linux-androideabi-simplex-chat-lib-simplex-chat-6.2.4.0-config.drv'...
+  2983	building '/nix/store/airchzzmgyjnilc4br0v2xks4vx78vbh-simplex-chat-lib-simplex-chat-6.2.4.0-armv7a-unknown-linux-androideabi-ghc-8.10.7-env.drv'...
+  2984	building '/nix/store/9qi2qc8zj6fqvd4cphi7id7cv3s4rhaa-armv7a-unknown-linux-androideabi-default-Setup-setup.drv'...
+  2985	building '/nix/store/0k759bqnjwxr0h3n2xqn1vb5bicpbgd5-simplex-chat-lib-simplex-chat-armv7a-unknown-linux-androideabi-6.2.4.0.drv'...
+
+  2986	Archive:  /home/vagrant/build/chat.simplex.app/result/pkg-armv7a-android-libsimplex.zip
+  2987	  inflating: ./apps/multiplatform/common/src/commonMain/cpp/android/libs/armeabi-v7a/libsimplex.so  
+  2988	warning: Git tree '/home/vagrant/build/chat.simplex.app' is dirty
+  2989	trace: haskell-nix.haskellLib.cleanGit: /nix/store/bccrkzfqfnha4rxgq96pqpx0hc312s7q-source does not seem to be a git repository,
+  2990	assuming it is a clean checkout.
+  2991	trace: WARNING: No materialized dummy-ghc-data.  mkdir /nix/store/k2jy626jzzkz49di4rp8acp6w9arvbir-source/materialized/dummy-ghc/armv7a-unknown-linux-androideabi-armv7a-unknown-linux-androideabi-ghc-8.10.7-x86_64-linux
+  2992	these 3 derivations will be built:
+  2993	  /nix/store/hvypcwmr4yv3pk7qa4qy2zlj17185nwy-armv7a-unknown-linux-androideabi-android-support-lib-android-support-0.1.0.0-config.drv
+  2994	  /nix/store/rak7yv1cdsby0n72dlnlvgcbl5ws2kbc-android-support-lib-android-support-0.1.0.0-armv7a-unknown-linux-androideabi-ghc-8.10.7-env.drv
+  2995	  /nix/store/7f9b5173cxmy705hlq8sph05lvx273bc-android-support-lib-android-support-armv7a-unknown-linux-androideabi-0.1.0.0.drv
+  2996	building '/nix/store/hvypcwmr4yv3pk7qa4qy2zlj17185nwy-armv7a-unknown-linux-androideabi-android-support-lib-android-support-0.1.0.0-config.drv'...
+  2997	building '/nix/store/rak7yv1cdsby0n72dlnlvgcbl5ws2kbc-android-support-lib-android-support-0.1.0.0-armv7a-unknown-linux-androideabi-ghc-8.10.7-env.drv'...
+  2998	building '/nix/store/7f9b5173cxmy705hlq8sph05lvx273bc-android-support-lib-android-support-armv7a-unknown-linux-androideabi-0.1.0.0.drv'...
+  2999	Archive:  /home/vagrant/build/chat.simplex.app/result/pkg-armv7a-android-libsupport.zip
+  3000	  inflating: ./apps/multiplatform/common/src/commonMain/cpp/android/libs/armeabi-v7a/libsupport.so  
+  3001	Found 8.7 via distributionUrl
+
+
+  3002	Running /opt/gradle/versions/8.7/bin/gradle -p ./apps/multiplatform/ clean :android:assembleRelease
+  3003	To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.7/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+  3004	Daemon will be stopped at the end of the build 
+  3005	
+  3006	> Configure project :
+  3007	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/build.gradle.kts:110:24: 'getter for buildDir: File!' is deprecated. Deprecated in Java
+  3008	
+  3009	> Configure project :android
+  3010	Exception while marshalling /opt/android-sdk/platforms/android-10/package.xml. Probably the SDK is read-only
+  3011	Exception while marshalling /opt/android-sdk/platforms/android-11/package.xml. Probably the SDK is read-only
+  3012	Exception while marshalling /opt/android-sdk/platforms/android-12/package.xml. Probably the SDK is read-only
+  3013	Exception while marshalling /opt/android-sdk/platforms/android-13/package.xml. Probably the SDK is read-only
+  3014	Exception while marshalling /opt/android-sdk/platforms/android-14/package.xml. Probably the SDK is read-only
+  3015	Exception while marshalling /opt/android-sdk/platforms/android-15/package.xml. Probably the SDK is read-only
+  3016	Exception while marshalling /opt/android-sdk/platforms/android-16/package.xml. Probably the SDK is read-only
+  3017	Exception while marshalling /opt/android-sdk/platforms/android-17/package.xml. Probably the SDK is read-only
+  3018	Exception while marshalling /opt/android-sdk/platforms/android-18/package.xml. Probably the SDK is read-only
+  3019	Exception while marshalling /opt/android-sdk/platforms/android-19/package.xml. Probably the SDK is read-only
+  3020	Exception while marshalling /opt/android-sdk/platforms/android-20/package.xml. Probably the SDK is read-only
+  3021	Exception while marshalling /opt/android-sdk/platforms/android-21/package.xml. Probably the SDK is read-only
+  3022	Exception while marshalling /opt/android-sdk/platforms/android-22/package.xml. Probably the SDK is read-only
+  3023	Exception while marshalling /opt/android-sdk/platforms/android-23/package.xml. Probably the SDK is read-only
+  3024	Exception while marshalling /opt/android-sdk/platforms/android-24/package.xml. Probably the SDK is read-only
+  3025	Exception while marshalling /opt/android-sdk/platforms/android-25/package.xml. Probably the SDK is read-only
+  3026	Exception while marshalling /opt/android-sdk/platforms/android-26/package.xml. Probably the SDK is read-only
+  3027	Exception while marshalling /opt/android-sdk/platforms/android-27/package.xml. Probably the SDK is read-only
+  3028	Exception while marshalling /opt/android-sdk/platforms/android-28/package.xml. Probably the SDK is read-only
+  3029	Exception while marshalling /opt/android-sdk/platforms/android-29/package.xml. Probably the SDK is read-only
+  3030	Exception while marshalling /opt/android-sdk/platforms/android-30/package.xml. Probably the SDK is read-only
+  3031	Exception while marshalling /opt/android-sdk/platforms/android-31/package.xml. Probably the SDK is read-only
+  3032	Exception while marshalling /opt/android-sdk/platforms/android-32/package.xml. Probably the SDK is read-only
+  3033	Exception while marshalling /opt/android-sdk/platforms/android-33/package.xml. Probably the SDK is read-only
+
+  3034	Warning: Errors during XML parse:
+  3035	Warning: Additionally, the fallback loader failed to parse the XML.
+  3036	Warning: Errors during XML parse:
+  3037	Warning: Additionally, the fallback loader failed to parse the XML.
+
+  3038	Checking the license for package NDK (Side by side) 23.1.7779620 in /opt/android-sdk/licenses
+  3039	License for package NDK (Side by side) 23.1.7779620 accepted.
+  3040	Preparing "Install NDK (Side by side) 23.1.7779620 v.23.1.7779620".
+  3041	"Install NDK (Side by side) 23.1.7779620 v.23.1.7779620" ready.
+  3042	Installing NDK (Side by side) 23.1.7779620 in /opt/android-sdk/ndk/23.1.7779620
+  3043	"Install NDK (Side by side) 23.1.7779620 v.23.1.7779620" complete.
+  3044	"Install NDK (Side by side) 23.1.7779620 v.23.1.7779620" finished.
+  3045	WARNING: [CXX5202] This app only has 32-bit [armeabi-v7a] native libraries. Beginning August 1, 2019 Google Play store requires that all apps that include native libraries must provide 64-bit versions. For more information, visit https://g.co/64-bit-requirement
+  3046	[CXX5202] This app only has 32-bit [armeabi-v7a] native libraries. Beginning August 1, 2019 Google Play store requires that all apps that include native libraries must provide 64-bit versions. For more information, visit https://g.co/64-bit-requirement
+  3047	WARNING: [CXX5202] This app only has 32-bit [armeabi-v7a] native libraries. Beginning August 1, 2019 Google Play store requires that all apps that include native libraries must provide 64-bit versions. For more information, visit https://g.co/64-bit-requirement
+  3048	[CXX5202] This app only has 32-bit [armeabi-v7a] native libraries. Beginning August 1, 2019 Google Play store requires that all apps that include native libraries must provide 64-bit versions. For more information, visit https://g.co/64-bit-requirement
+  3049	
+  3050	> Configure project :common
+  3051	MR file generation for iOS is not supported on your system!
+  3052	
+  3053	> Configure project :desktop
+  3054	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/desktop/build.gradle.kts:158:37: 'getter for buildDir: File!' is deprecated. Deprecated in Java
+  3055	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/desktop/build.gradle.kts:168:37: 'getter for buildDir: File!' is deprecated. Deprecated in Java
+  3056	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/desktop/build.gradle.kts:178:37: 'getter for buildDir: File!' is deprecated. Deprecated in Java
+  3057	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/desktop/build.gradle.kts:188:37: 'getter for buildDir: File!' is deprecated. Deprecated in Java
+  3058	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/desktop/build.gradle.kts:198:37: 'getter for buildDir: File!' is deprecated. Deprecated in Java
+  3059	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/desktop/build.gradle.kts:208:37: 'getter for buildDir: File!' is deprecated. Deprecated in Java
+  3060	Checking the license for package Android SDK Build-Tools 34 in /opt/android-sdk/licenses
+  3061	License for package Android SDK Build-Tools 34 accepted.
+  3062	Preparing "Install Android SDK Build-Tools 34 v.34.0.0".
+  3063	"Install Android SDK Build-Tools 34 v.34.0.0" ready.
+  3064	Installing Android SDK Build-Tools 34 in /opt/android-sdk/build-tools/34.0.0
+  3065	"Install Android SDK Build-Tools 34 v.34.0.0" complete.
+  3066	"Install Android SDK Build-Tools 34 v.34.0.0" finished.
+  3067	Checking the license for package Android SDK Platform 34 in /opt/android-sdk/licenses
+  3068	License for package Android SDK Platform 34 accepted.
+  3069	Preparing "Install Android SDK Platform 34 (revision 3)".
+  3070	"Install Android SDK Platform 34 (revision 3)" ready.
+  3071	Installing Android SDK Platform 34 in /opt/android-sdk/platforms/android-34
+  3072	"Install Android SDK Platform 34 (revision 3)" complete.
+  3073	"Install Android SDK Platform 34 (revision 3)" finished.
+  3074	Exception while marshalling /opt/android-sdk/platforms/android-10/package.xml. Probably the SDK is read-only
+  3075	Exception while marshalling /opt/android-sdk/platforms/android-11/package.xml. Probably the SDK is read-only
+  3076	Exception while marshalling /opt/android-sdk/platforms/android-12/package.xml. Probably the SDK is read-only
+  3077	Exception while marshalling /opt/android-sdk/platforms/android-13/package.xml. Probably the SDK is read-only
+  3078	Exception while marshalling /opt/android-sdk/platforms/android-14/package.xml. Probably the SDK is read-only
+  3079	Exception while marshalling /opt/android-sdk/platforms/android-15/package.xml. Probably the SDK is read-only
+  3080	Exception while marshalling /opt/android-sdk/platforms/android-16/package.xml. Probably the SDK is read-only
+  3081	Exception while marshalling /opt/android-sdk/platforms/android-17/package.xml. Probably the SDK is read-only
+  3082	Exception while marshalling /opt/android-sdk/platforms/android-18/package.xml. Probably the SDK is read-only
+  3083	Exception while marshalling /opt/android-sdk/platforms/android-19/package.xml. Probably the SDK is read-only
+  3084	Exception while marshalling /opt/android-sdk/platforms/android-20/package.xml. Probably the SDK is read-only
+  3085	Exception while marshalling /opt/android-sdk/platforms/android-21/package.xml. Probably the SDK is read-only
+  3086	Exception while marshalling /opt/android-sdk/platforms/android-22/package.xml. Probably the SDK is read-only
+  3087	Exception while marshalling /opt/android-sdk/platforms/android-23/package.xml. Probably the SDK is read-only
+  3088	Exception while marshalling /opt/android-sdk/platforms/android-24/package.xml. Probably the SDK is read-only
+  3089	Exception while marshalling /opt/android-sdk/platforms/android-25/package.xml. Probably the SDK is read-only
+  3090	Exception while marshalling /opt/android-sdk/platforms/android-26/package.xml. Probably the SDK is read-only
+  3091	Exception while marshalling /opt/android-sdk/platforms/android-27/package.xml. Probably the SDK is read-only
+  3092	Exception while marshalling /opt/android-sdk/platforms/android-28/package.xml. Probably the SDK is read-only
+  3093	Exception while marshalling /opt/android-sdk/platforms/android-29/package.xml. Probably the SDK is read-only
+  3094	Exception while marshalling /opt/android-sdk/platforms/android-30/package.xml. Probably the SDK is read-only
+  3095	Exception while marshalling /opt/android-sdk/platforms/android-31/package.xml. Probably the SDK is read-only
+  3096	Exception while marshalling /opt/android-sdk/platforms/android-32/package.xml. Probably the SDK is read-only
+  3097	Exception while marshalling /opt/android-sdk/platforms/android-33/package.xml. Probably the SDK is read-only
+  3098	
+  3099	> Task :clean UP-TO-DATE
+  3100	> Task :android:externalNativeBuildCleanDebug
+  3101	> Task :android:externalNativeBuildCleanRelease
+  3102	> Task :android:clean UP-TO-DATE
+  3103	> Task :common:cleanDesktopTest UP-TO-DATE
+  3104	> Task :common:cleanAllTests UP-TO-DATE
+  3105	> Task :common:clean
+  3106	> Task :desktop:cleanJvmTest UP-TO-DATE
+  3107	> Task :desktop:cleanAllTests UP-TO-DATE
+  3108	> Task :desktop:cmakeClean UP-TO-DATE
+  3109	> Task :desktop:clean UP-TO-DATE
+  3110	> Task :android:buildKotlinToolingMetadata
+  3111	> Task :android:checkKotlinGradlePluginConfigurationErrors
+  3112	> Task :android:preBuild UP-TO-DATE
+  3113	> Task :android:preReleaseBuild UP-TO-DATE
+  3114	> Task :android:generateReleaseBuildConfig
+  3115	> Task :common:preBuild UP-TO-DATE
+  3116	> Task :common:preReleaseBuild UP-TO-DATE
+  3117	> Task :android:generateReleaseResValues
+  3118	> Task :common:writeReleaseAarMetadata
+  3119	> Task :common:adjustFormatting
+  3120	> Task :android:checkReleaseAarMetadata
+  3121	> Task :common:generateMRcommonMain
+  3122	> Task :common:generateMRandroidMain
+  3123	> Task :common:generateReleaseResValues
+  3124	> Task :common:generateReleaseResources
+  3125	> Task :common:packageReleaseResources
+  3126	> Task :android:mapReleaseSourceSetPaths
+  3127	> Task :android:generateReleaseResources
+  3128	
+  3129	> Task :android:mergeReleaseResources
+  3130	/home/vagrant/build/chat.simplex.app/apps/multiplatform/common/build/intermediates/packaged_res/release/values-pt/values-pt.xml:63:4: Multiple substitutions specified in non-positional format of string resource string/app_check_for_updates_button_download. Did you mean to add the formatted="false" attribute?
+  3131	/home/vagrant/build/chat.simplex.app/apps/multiplatform/common/build/intermediates/packaged_res/release/values-hu/values-hu.xml:85:4: Multiple substitutions specified in non-positional format of string resource string/app_check_for_updates_button_download. Did you mean to add the formatted="false" attribute?
+  3132	/home/vagrant/build/chat.simplex.app/apps/multiplatform/common/build/intermediates/packaged_res/release/values-hi/values-hi.xml:206:4: Multiple substitutions specified in non-positional format of string resource string/rcv_group_event_changed_member_role. Did you mean to add the formatted="false" attribute?
+  3133	/home/vagrant/build/chat.simplex.app/apps/multiplatform/common/build/intermediates/packaged_res/release/values-hu/values-hu.xml:393:4: Multiple substitutions specified in non-positional format of string resource string/core_simplexmq_version. Did you mean to add the formatted="false" attribute?
+
+  3338	/home/vagrant/build/chat.simplex.app/apps/multiplatform/common/build/intermediates/packaged_res/release/values-it/values-it.xml:1477:4: Multiple substitutions specified in non-positional format of string resource string/remote_host_disconnected_from. Did you mean to add the formatted="false" attribute?
+  3339	/home/vagrant/build/chat.simplex.app/apps/multiplatform/common/build/intermediates/packaged_res/release/values-es/values-es.xml:86:4: Multiple substitutions specified in non-positional format of string resource string/app_check_for_updates_button_download. Did you mean to add the formatted="false" attribute?
+  3340	/home/vagrant/build/chat.simplex.app/apps/multiplatform/common/build/intermediates/packaged_res/release/values-lt/values-lt.xml:1478:4: Multiple substitutions specified in non-positional format of string resource string/total_files_count_and_size. Did you mean to add the formatted="false" attribute?
+  3341	/home/vagrant/build/chat.simplex.app/apps/multiplatform/common/build/intermediates/packaged_res/release/values/values.xml:1487:4: Multiple substitutions specified in non-positional format of string resource string/remote_host_disconnected_from. Did you mean to add the formatted="false" attribute?
+  3342	/home/vagrant/build/chat.simplex.app/apps/multiplatform/common/build/intermediates/packaged_res/release/values-it/values-it.xml:1575:4: Multiple substitutions specified in non-positional format of string resource string/sender_at_ts. Did you mean to add the formatted="false" attribute?
+  3343	
+  3344	> Task :android:packageReleaseResources
+  3345	> Task :android:createReleaseCompatibleScreenManifests
+  3346	> Task :android:extractDeepLinksRelease
+  3347	> Task :common:extractDeepLinksRelease
+  3348	> Task :common:checkKotlinGradlePluginConfigurationErrors
+  3349	> Task :common:convertXmlValueResourcesForAndroidMain NO-SOURCE
+  3350	> Task :common:copyNonXmlValueResourcesForAndroidMain NO-SOURCE
+  3351	> Task :common:prepareComposeResourcesTaskForAndroidMain NO-SOURCE
+  3352	> Task :common:generateResourceAccessorsForAndroidMain SKIPPED
+  3353	> Task :common:convertXmlValueResourcesForCommonMain NO-SOURCE
+  3354	> Task :common:copyNonXmlValueResourcesForCommonMain NO-SOURCE
+  3355	> Task :common:prepareComposeResourcesTaskForCommonMain NO-SOURCE
+  3356	> Task :common:generateResourceAccessorsForCommonMain SKIPPED
+  3357	> Task :common:generateActualResourceCollectorsForAndroidMain SKIPPED
+  3358	> Task :common:generateAndroidMainNonAndroidBuildConfig SKIPPED
+  3359	> Task :common:generateAndroidReleaseNonAndroidBuildConfig SKIPPED
+  3360	> Task :common:generateComposeResClass SKIPPED
+  3361	> Task :common:generateExpectResourceCollectorsForCommonMain SKIPPED
+  3362	> Task :android:parseReleaseLocalResources
+
+  3363	
+  3364	> Task :android:mergeReleaseResources
+
+  3365	/home/vagrant/build/chat.simplex.app/apps/multiplatform/common/build/intermediates/packaged_res/release/values-es/values-es.xml:395:4: Multiple substitutions specified in non-positional format of string resource string/core_simplexmq_version. Did you mean to add the formatted="false" attribute?
+  3366	/home/vagrant/build/chat.simplex.app/apps/multiplatform/common/build/intermediates/packaged_res/release/values-it/values-it.xml:1786:4: Multiple substitutions specified in non-positional format of string resource string/snd_group_event_changed_member_role. Did you mean to add the formatted="false" attribute?
+  3367	/home/vagrant/build/chat.simplex.app/apps/multiplatform/common/build/intermediates/packaged_res/release/values/values.xml:1602:4: Multiple substitutions specified in non-positional format of string resource string/sender_at_ts. Did you mean to add the formatted="false" attribute?
+  3368	/home/vagrant/build/chat.simplex.app/apps/multiplatform/common/build/intermediates/packaged_res/release/values-it/values-it.xml:1875:4: Multiple substitutions specified in non-positional format of string resource string/total_files_count_and_size. Did you mean to add the formatted="false" attribute?
+  3369	/home/vagrant/build/chat.simplex.app/apps/multiplatform/common/build/intermediates/packaged_res/release/values-pl/values-pl.xml:637:4: Multiple substitutions specified in non-positional format of string resource string/feature_offered_item_with_param. Did you mean to add the formatted="false" attribute?
+
+  3514	/home/vagrant/build/chat.simplex.app/apps/multiplatform/common/build/intermediates/packaged_res/release/values-uk/values-uk.xml:1476:4: Multiple substitutions specified in non-positional format of string resource string/remote_host_disconnected_from. Did you mean to add the formatted="false" attribute?
+  3515	/home/vagrant/build/chat.simplex.app/apps/multiplatform/common/build/intermediates/packaged_res/release/values-uk/values-uk.xml:1574:4: Multiple substitutions specified in non-positional format of string resource string/sender_at_ts. Did you mean to add the formatted="false" attribute?
+  3516	/home/vagrant/build/chat.simplex.app/apps/multiplatform/common/build/intermediates/packaged_res/release/values-uk/values-uk.xml:1785:4: Multiple substitutions specified in non-positional format of string resource string/snd_group_event_changed_member_role. Did you mean to add the formatted="false" attribute?
+  3517	/home/vagrant/build/chat.simplex.app/apps/multiplatform/common/build/intermediates/packaged_res/release/values-uk/values-uk.xml:1873:4: Multiple substitutions specified in non-positional format of string resource string/total_files_count_and_size. Did you mean to add the formatted="false" attribute?
+  3518	
+
+  3519	> Task :common:processReleaseManifest
+  3520	package="chat.simplex.common" found in source AndroidManifest.xml: /home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/androidMain/AndroidManifest.xml.
+  3521	Setting the namespace via the package attribute in the source AndroidManifest.xml is no longer supported, and the value is ignored.
+  3522	Recommendation: remove package="chat.simplex.common" from the source AndroidManifest.xml: /home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/androidMain/AndroidManifest.xml.
+  3523	
+  3524	> Task :common:parseReleaseLocalResources
+  3525	> Task :common:compileReleaseLibraryResources
+  3526	> Task :common:generateMRdesktopMain
+  3527	
+  3528	> Task :android:processReleaseMainManifest
+  3529	package="chat.simplex.app" found in source AndroidManifest.xml: /home/vagrant/build/chat.simplex.app/apps/multiplatform/android/src/main/AndroidManifest.xml.
+  3530	Setting the namespace via the package attribute in the source AndroidManifest.xml is no longer supported, and the value is ignored.
+  3531	Recommendation: remove package="chat.simplex.app" from the source AndroidManifest.xml: /home/vagrant/build/chat.simplex.app/apps/multiplatform/android/src/main/AndroidManifest.xml.
+  3532	/home/vagrant/build/chat.simplex.app/apps/multiplatform/android/src/main/AndroidManifest.xml:44:7-39 Warning:
+  3533		android:extractNativeLibs should not be specified in this source AndroidManifest.xml file. See https://d.android.com/guide/topics/manifest/application-element#extractNativeLibs for more information.
+  3534	The AGP Upgrade Assistant can remove the attribute from the AndroidManifest.xml file and update the build file accordingly. See https://d.android.com/studio/build/agp-upgrade-assistant for more information.
+  3535	
+  3536	> Task :android:processReleaseManifest
+  3537	> Task :common:generateNonAndroidBuildConfig
+  3538	> Task :common:convertXmlValueResourcesForAndroidRelease NO-SOURCE
+  3539	> Task :common:copyNonXmlValueResourcesForAndroidRelease NO-SOURCE
+  3540	> Task :common:prepareComposeResourcesTaskForAndroidRelease NO-SOURCE
+  3541	> Task :common:generateResourceAccessorsForAndroidRelease SKIPPED
+  3542	> Task :android:extractProguardFiles
+  3543	> Task :android:javaPreCompileRelease
+  3544	> Task :common:javaPreCompileRelease
+  3545	> Task :common:copyReleaseComposeResourcesToAndroidAssets
+  3546	> Task :common:mergeReleaseJniLibFolders
+  3547	> Task :common:mergeReleaseNativeLibs NO-SOURCE
+  3548	> Task :common:generateReleaseRFile
+  3549	> Task :common:stripReleaseDebugSymbols NO-SOURCE
+  3550	> Task :common:extractDeepLinksForAarRelease
+  3551	> Task :common:copyReleaseJniLibsProjectAndLocalJars
+  3552	> Task :common:mergeReleaseShaders
+  3553	> Task :common:compileReleaseShaders NO-SOURCE
+  3554	> Task :common:generateReleaseAssets UP-TO-DATE
+  3555	> Task :common:packageReleaseAssets
+  3556	> Task :common:prepareReleaseArtProfile
+  3557	> Task :common:prepareLintJarForPublish
+  3558	> Task :common:extractProguardFiles
+  3559	> Task :common:writeReleaseLintModelMetadata
+  3560	
+  3561	> Task :android:configureCMakeRelWithDebInfo[armeabi-v7a]
+  3562	Checking the license for package CMake 3.22.1 in /opt/android-sdk/licenses
+  3563	License for package CMake 3.22.1 accepted.
+  3564	Preparing "Install CMake 3.22.1 v.3.22.1".
+  3565	"Install CMake 3.22.1 v.3.22.1" ready.
+  3566	Installing CMake 3.22.1 in /opt/android-sdk/cmake/3.22.1
+  3567	"Install CMake 3.22.1 v.3.22.1" complete.
+  3568	"Install CMake 3.22.1 v.3.22.1" finished.
+  3569	
+  3570	> Task :android:buildCMakeRelWithDebInfo[armeabi-v7a]
+  3571	C/C++: ninja: Entering directory `/home/vagrant/build/chat.simplex.app/apps/multiplatform/android/.cxx/RelWithDebInfo/5015l2yl/armeabi-v7a'
+  3572	C/C++: /home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/cpp/android/simplex-api.c:81:90: warning: incompatible pointer types passing 'jlong *' (aka 'long long *') to parameter of type 'chat_ctrl *' (aka 'long **') [-Wincompatible-pointer-types]
+  3573	C/C++:     jstring res = (*env)->NewStringUTF(env, chat_migrate_init(_dbPath, _dbKey, _confirm, &_ctrl));
+  3574	C/C++:                                                                                          ^~~~~~
+  3575	C/C++: /home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/cpp/android/simplex-api.c:59:99: note: passing argument to parameter 'ctrl' here
+  3576	C/C++: extern char *chat_migrate_init(const char *path, const char *key, const char *confirm, chat_ctrl *ctrl);
+  3577	C/C++:                                                                                                   ^
+  3578	C/C++: /home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/cpp/android/simplex-api.c:180:87: warning: passing 'jbyte *' (aka 'signed char *') to parameter of type 'char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+  3579	C/C++:     jstring res = (*env)->NewStringUTF(env, chat_write_file((void*)controller, _path, buff, capacity));
+  3580	C/C++:                                                                                       ^~~~
+  3581	C/C++: /home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/cpp/android/simplex-api.c:70:70: note: passing argument to parameter 'ptr' here
+  3582	C/C++: extern char *chat_write_file(chat_ctrl ctrl, const char *path, char *ptr, int length);
+  3583	C/C++:                                                                      ^
+  3584	C/C++: /home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/cpp/android/simplex-api.c:191:12: warning: initializing 'jbyte *' (aka 'signed char *') with an expression of type 'char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+  3585	C/C++:     jbyte *res = chat_read_file(_path, _key, _nonce);
+  3586	C/C++:            ^     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  3587	C/C++: /home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/cpp/android/simplex-api.c:210:26: warning: passing 'jbyte *' (aka 'signed char *') to parameter of type 'const char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+  3588	C/C++:         int len = strlen(res + 1); // + 1 offset here is to not include status byte
+  3589	C/C++:                          ^~~~~~~
+  3590	C/C++: /opt/android-sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/fortify/string.h:226:33: note: passing argument to parameter 's' here
+  3591	C/C++: size_t strlen(const char* const s __pass_object_size0) __overloadable {
+  3592	C/C++:                                 ^
+  3593	C/C++: 4 warnings generated.
+  3594	
+  3595	> Task :android:mergeReleaseJniLibFolders
+  3596	> Task :common:copyReleaseJniLibsProjectOnly
+  3597	> Task :android:desugarReleaseFileDependencies
+  3598	> Task :android:checkReleaseDuplicateClasses
+  3599	> Task :android:mergeReleaseNativeLibs
+  3600	> Task :android:mergeReleaseArtProfile
+  3601	> Task :android:processReleaseManifestForPackage
+  3602	> Task :common:compileReleaseKotlinAndroid
+  3603	> Task :android:mergeExtDexRelease
+  3604	> Task :android:mergeReleaseShaders
+  3605	> Task :android:compileReleaseShaders NO-SOURCE
+  3606	> Task :android:generateReleaseAssets UP-TO-DATE
+  3607	> Task :android:mergeReleaseAssets
+  3608	> Task :android:compressReleaseAssets
+  3609	> Task :android:collectReleaseDependencies
+  3610	> Task :android:sdkReleaseDependencyData
+  3611	> Task :android:writeReleaseAppMetadata
+  3612	> Task :android:writeReleaseSigningConfigVersions
+  3613	> Task :android:stripReleaseDebugSymbols
+  3614	> Task :android:processReleaseResources
+  3615	> Task :android:optimizeReleaseResources
+  3616	> Task :android:extractReleaseNativeSymbolTables
+  3617	> Task :android:mergeReleaseNativeDebugMetadata
+  3618	
+  3619	> Task :common:compileReleaseKotlinAndroid
+  3620	w: Opt-in requirement marker com.arkivanov.decompose.ExperimentalDecomposeApi is unresolved. Please make sure it's present in the module dependencies
+  3621	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/build/generated/moko/androidMain/src/chat/simplex/res/MR.kt:14:8 'expect'/'actual' classes (including interfaces, objects, annotations, enums, and 'actual' typealiases) are in Beta. You can use -Xexpect-actual-classes flag to suppress this warning. Also see: https://youtrack.jetbrains.com/issue/KT-61573
+  3622	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/build/generated/moko/androidMain/src/chat/simplex/res/MR.kt:15:10 'expect'/'actual' classes (including interfaces, objects, annotations, enums, and 'actual' typealiases) are in Beta. You can use -Xexpect-actual-classes flag to suppress this warning. Also see: https://youtrack.jetbrains.com/issue/KT-61573
+  3623	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/build/generated/moko/androidMain/src/chat/simplex/res/MR.kt:6316:10 'expect'/'actual' classes (including interfaces, objects, annotations, enums, and 'actual' typealiases) are in Beta. You can use -Xexpect-actual-classes flag to suppress this warning. Also see: https://youtrack.jetbrains.com/issue/KT-61573
+  3624	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/build/generated/moko/androidMain/src/chat/simplex/res/MR.kt:6318:10 'expect'/'actual' classes (including interfaces, objects, annotations, enums, and 'actual' typealiases) are in Beta. You can use -Xexpect-actual-classes flag to suppress this warning. Also see: https://youtrack.jetbrains.com/issue/KT-61573
+  3625	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/build/generated/moko/androidMain/src/chat/simplex/res/MR.kt:6846:10 'expect'/'actual' classes (including interfaces, objects, annotations, enums, and 'actual' typealiases) are in Beta. You can use -Xexpect-actual-classes flag to suppress this warning. Also see: https://youtrack.jetbrains.com/issue/KT-61573
+  3626	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/build/generated/moko/androidMain/src/chat/simplex/res/MR.kt:6847:12 'expect'/'actual' classes (including interfaces, objects, annotations, enums, and 'actual' typealiases) are in Beta. You can use -Xexpect-actual-classes flag to suppress this warning. Also see: https://youtrack.jetbrains.com/issue/KT-61573
+  3627	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/build/generated/moko/androidMain/src/chat/simplex/res/MR.kt:6863:10 'expect'/'actual' classes (including interfaces, objects, annotations, enums, and 'actual' typealiases) are in Beta. You can use -Xexpect-actual-classes flag to suppress this warning. Also see: https://youtrack.jetbrains.com/issue/KT-61573
+  3628	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/build/generated/moko/androidMain/src/chat/simplex/res/MR.kt:6865:10 'expect'/'actual' classes (including interfaces, objects, annotations, enums, and 'actual' typealiases) are in Beta. You can use -Xexpect-actual-classes flag to suppress this warning. Also see: https://youtrack.jetbrains.com/issue/KT-61573
+  3629	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/build/generated/moko/androidMain/src/chat/simplex/res/MR.kt:6867:10 'expect'/'actual' classes (including interfaces, objects, annotations, enums, and 'actual' typealiases) are in Beta. You can use -Xexpect-actual-classes flag to suppress this warning. Also see: https://youtrack.jetbrains.com/issue/KT-61573
+  3630	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/build/generated/moko/commonMain/src/chat/simplex/res/MR.kt:12:8 'expect'/'actual' classes (including interfaces, objects, annotations, enums, and 'actual' typealiases) are in Beta. You can use -Xexpect-actual-classes flag to suppress this warning. Also see: https://youtrack.jetbrains.com/issue/KT-61573
+  3631	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/build/generated/moko/commonMain/src/chat/simplex/res/MR.kt:13:17 'expect'/'actual' classes (including interfaces, objects, annotations, enums, and 'actual' typealiases) are in Beta. You can use -Xexpect-actual-classes flag to suppress this warning. Also see: https://youtrack.jetbrains.com/issue/KT-61573
+  3632	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/build/generated/moko/commonMain/src/chat/simplex/res/MR.kt:4513:17 'expect'/'actual' classes (including interfaces, objects, annotations, enums, and 'actual' typealiases) are in Beta. You can use -Xexpect-actual-classes flag to suppress this warning. Also see: https://youtrack.jetbrains.com/issue/KT-61573
+  3633	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/build/generated/moko/commonMain/src/chat/simplex/res/MR.kt:4515:17 'expect'/'actual' classes (including interfaces, objects, annotations, enums, and 'actual' typealiases) are in Beta. You can use -Xexpect-actual-classes flag to suppress this warning. Also see: https://youtrack.jetbrains.com/issue/KT-61573
+  3634	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/build/generated/moko/commonMain/src/chat/simplex/res/MR.kt:4995:17 'expect'/'actual' classes (including interfaces, objects, annotations, enums, and 'actual' typealiases) are in Beta. You can use -Xexpect-actual-classes flag to suppress this warning. Also see: https://youtrack.jetbrains.com/issue/KT-61573
+  3635	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/build/generated/moko/commonMain/src/chat/simplex/res/MR.kt:4996:19 'expect'/'actual' classes (including interfaces, objects, annotations, enums, and 'actual' typealiases) are in Beta. You can use -Xexpect-actual-classes flag to suppress this warning. Also see: https://youtrack.jetbrains.com/issue/KT-61573
+  3636	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/build/generated/moko/commonMain/src/chat/simplex/res/MR.kt:5011:17 'expect'/'actual' classes (including interfaces, objects, annotations, enums, and 'actual' typealiases) are in Beta. You can use -Xexpect-actual-classes flag to suppress this warning. Also see: https://youtrack.jetbrains.com/issue/KT-61573
+  3637	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/build/generated/moko/commonMain/src/chat/simplex/res/MR.kt:5013:17 'expect'/'actual' classes (including interfaces, objects, annotations, enums, and 'actual' typealiases) are in Beta. You can use -Xexpect-actual-classes flag to suppress this warning. Also see: https://youtrack.jetbrains.com/issue/KT-61573
+  3638	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/build/generated/moko/commonMain/src/chat/simplex/res/MR.kt:5015:17 'expect'/'actual' classes (including interfaces, objects, annotations, enums, and 'actual' typealiases) are in Beta. You can use -Xexpect-actual-classes flag to suppress this warning. Also see: https://youtrack.jetbrains.com/issue/KT-61573
+  3639	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/androidMain/kotlin/chat/simplex/common/helpers/SoundPlayer.kt:113:5 'vibrate(VibrationEffect!, AudioAttributes!): Unit' is deprecated. Deprecated in Java
+  3640	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/androidMain/kotlin/chat/simplex/common/platform/Files.android.kt:37:98 'constructor CreateDocument()' is deprecated. Using a wildcard mime type with CreateDocument is not recommended as it breaks the automatic handling of file extensions. Instead, specify the mime type by using the constructor that takes an concrete mime type (e.g.., CreateDocument("image/png")).
+  3641	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/androidMain/kotlin/chat/simplex/common/platform/Files.android.kt:52:1 'expect'/'actual' classes (including interfaces, objects, annotations, enums, and 'actual' typealiases) are in Beta. You can use -Xexpect-actual-classes flag to suppress this warning. Also see: https://youtrack.jetbrains.com/issue/KT-61573
+  3642	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/androidMain/kotlin/chat/simplex/common/platform/Files.android.kt:64:1 'expect'/'actual' classes (including interfaces, objects, annotations, enums, and 'actual' typealiases) are in Beta. You can use -Xexpect-actual-classes flag to suppress this warning. Also see: https://youtrack.jetbrains.com/issue/KT-61573
+  3643	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/androidMain/kotlin/chat/simplex/common/platform/Log.android.kt:6:1 'expect'/'actual' classes (including interfaces, objects, annotations, enums, and 'actual' typealiases) are in Beta. You can use -Xexpect-actual-classes flag to suppress this warning. Also see: https://youtrack.jetbrains.com/issue/KT-61573
+  3644	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/androidMain/kotlin/chat/simplex/common/platform/PlatformTextField.android.kt:118:38 'createWrapper(InputConnection, EditorInfo, InputConnectionCompat.OnCommitContentListener): InputConnection' is deprecated. Deprecated in Java
+  3645	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/androidMain/kotlin/chat/simplex/common/platform/PlatformTextField.android.kt:163:9 Name shadowed: it
+  3646	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/androidMain/kotlin/chat/simplex/common/platform/RecAndPlay.android.kt:17:1 'expect'/'actual' classes (including interfaces, objects, annotations, enums, and 'actual' typealiases) are in Beta. You can use -Xexpect-actual-classes flag to suppress this warning. Also see: https://youtrack.jetbrains.com/issue/KT-61573
+  3647	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/androidMain/kotlin/chat/simplex/common/platform/RecAndPlay.android.kt:26:7 'constructor MediaRecorder()' is deprecated. Deprecated in Java
+  3648	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/androidMain/kotlin/chat/simplex/common/platform/RecAndPlay.android.kt:101:1 'expect'/'actual' classes (including interfaces, objects, annotations, enums, and 'actual' typealiases) are in Beta. You can use -Xexpect-actual-classes flag to suppress this warning. Also see: https://youtrack.jetbrains.com/issue/KT-61573
+  3649	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/androidMain/kotlin/chat/simplex/common/platform/RecAndPlay.android.kt:298:1 'expect'/'actual' classes (including interfaces, objects, annotations, enums, and 'actual' typealiases) are in Beta. You can use -Xexpect-actual-classes flag to suppress this warning. Also see: https://youtrack.jetbrains.com/issue/KT-61573
+  3650	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/androidMain/kotlin/chat/simplex/common/platform/RecAndPlay.android.kt:299:1 'expect'/'actual' classes (including interfaces, objects, annotations, enums, and 'actual' typealiases) are in Beta. You can use -Xexpect-actual-classes flag to suppress this warning. Also see: https://youtrack.jetbrains.com/issue/KT-61573
+  3651	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/androidMain/kotlin/chat/simplex/common/platform/ScrollableColumn.android.kt:39:7 Name shadowed: state
+  3652	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/androidMain/kotlin/chat/simplex/common/platform/ScrollableColumn.android.kt:98:7 Name shadowed: state
+  3653	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/androidMain/kotlin/chat/simplex/common/platform/ScrollableColumn.android.kt:117:7 Name shadowed: modifier
+  3654	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/androidMain/kotlin/chat/simplex/common/platform/ScrollableColumn.android.kt:118:7 Name shadowed: state
+  3655	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/androidMain/kotlin/chat/simplex/common/platform/ScrollableColumn.android.kt:164:7 Name shadowed: modifier
+  3656	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/androidMain/kotlin/chat/simplex/common/platform/ScrollableColumn.android.kt:165:7 Name shadowed: state
+  3657	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/androidMain/kotlin/chat/simplex/common/platform/Share.android.kt:31:7 Name shadowed: text
+  3658	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/androidMain/kotlin/chat/simplex/common/platform/Share.android.kt:51:21 Parameter 'text' is never used
+  3659	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/androidMain/kotlin/chat/simplex/common/platform/UI.android.kt:31:80 'getter for defaultDisplay: Display!' is deprecated. Deprecated in Java
+  3660	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/androidMain/kotlin/chat/simplex/common/platform/UI.android.kt:70:1 'expect'/'actual' classes (including interfaces, objects, annotations, enums, and 'actual' typealiases) are in Beta. You can use -Xexpect-actual-classes flag to suppress this warning. Also see: https://youtrack.jetbrains.com/issue/KT-61573
+  3661	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/androidMain/kotlin/chat/simplex/common/platform/VideoPlayer.android.kt:11:38 'C' is deprecated. Deprecated in Java
+  3662	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/androidMain/kotlin/chat/simplex/common/platform/VideoPlayer.android.kt:12:44 'AudioAttributes' is deprecated. Deprecated in Java
+  3663	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/androidMain/kotlin/chat/simplex/common/platform/VideoPlayer.android.kt:13:45 'ProgressiveMediaSource' is deprecated. Deprecated in Java
+  3664	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/androidMain/kotlin/chat/simplex/common/platform/VideoPlayer.android.kt:14:47 'DefaultDataSource' is deprecated. Deprecated in Java
+  3665	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/androidMain/kotlin/chat/simplex/common/platform/VideoPlayer.android.kt:15:47 'DefaultHttpDataSource' is deprecated. Deprecated in Java
+  3666	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/androidMain/kotlin/chat/simplex/common/platform/VideoPlayer.android.kt:20:1 'expect'/'actual' classes (including interfaces, objects, annotations, enums, and 'actual' typealiases) are in Beta. You can use -Xexpect-actual-classes flag to suppress this warning. Also see: https://youtrack.jetbrains.com/issue/KT-61573
+  3667	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/androidMain/kotlin/chat/simplex/common/platform/VideoPlayer.android.kt:40:16 'ExoPlayer' is deprecated. Deprecated in Java
+  3668	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/androidMain/kotlin/chat/simplex/common/platform/VideoPlayer.android.kt:41:5 'DefaultRenderersFactory' is deprecated. Deprecated in Java
+  3669	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/androidMain/kotlin/chat/simplex/common/platform/VideoPlayer.android.kt:50:20 'Player' is deprecated. Deprecated in Java
+  3670	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/androidMain/kotlin/chat/simplex/common/platform/VideoPlayer.android.kt:56:9 'AudioAttributes' is deprecated. Deprecated in Java
+  3671	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/androidMain/kotlin/chat/simplex/common/platform/VideoPlayer.android.kt:57:27 'CONTENT_TYPE_MUSIC: Int' is deprecated. Deprecated in Java
+  3672	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/androidMain/kotlin/chat/simplex/common/platform/VideoPlayer.android.kt:86:33 'DefaultDataSource' is deprecated. Deprecated in Java
+  3673	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/androidMain/kotlin/chat/simplex/common/platform/VideoPlayer.android.kt:86:78 'DefaultHttpDataSource' is deprecated. Deprecated in Java
+  3674	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/androidMain/kotlin/chat/simplex/common/platform/VideoPlayer.android.kt:87:22 'ProgressiveMediaSource' is deprecated. Deprecated in Java
+  3675	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/androidMain/kotlin/chat/simplex/common/platform/VideoPlayer.android.kt:87:90 'MediaItem' is deprecated. Deprecated in Java
+  3676	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/androidMain/kotlin/chat/simplex/common/platform/VideoPlayer.android.kt:111:50 'Player' is deprecated. Deprecated in Java
+  3677	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/androidMain/kotlin/chat/simplex/common/platform/VideoPlayer.android.kt:131:32 'Player' is deprecated. Deprecated in Java
+  3678	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/androidMain/kotlin/chat/simplex/common/views/call/CallAudioDeviceManager.kt:141:8 'stopBluetoothSco(): Unit' is deprecated. Deprecated in Java
+  3679	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/androidMain/kotlin/chat/simplex/common/views/call/CallAudioDeviceManager.kt:151:10 'stopBluetoothSco(): Unit' is deprecated. Deprecated in Java
+  3680	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/androidMain/kotlin/chat/simplex/common/views/call/CallAudioDeviceManager.kt:152:10 'setter for isWiredHeadsetOn: Boolean' is deprecated. Deprecated in Java
+  3681	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/androidMain/kotlin/chat/simplex/common/views/call/CallAudioDeviceManager.kt:153:10 'setter for isSpeakerphoneOn: Boolean' is deprecated. Deprecated in Java
+  3682	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/androidMain/kotlin/chat/simplex/common/views/call/CallAudioDeviceManager.kt:164:10 'setter for isSpeakerphoneOn: Boolean' is deprecated. Deprecated in Java
+  3683	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/androidMain/kotlin/chat/simplex/common/views/call/CallAudioDeviceManager.kt:166:12 'setter for isWiredHeadsetOn: Boolean' is deprecated. Deprecated in Java
+  3684	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/androidMain/kotlin/chat/simplex/common/views/call/CallAudioDeviceManager.kt:167:12 'stopBluetoothSco(): Unit' is deprecated. Deprecated in Java
+  3685	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/androidMain/kotlin/chat/simplex/common/views/call/CallAudioDeviceManager.kt:170:12 'setter for isWiredHeadsetOn: Boolean' is deprecated. Deprecated in Java
+  3686	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/androidMain/kotlin/chat/simplex/common/views/call/CallAudioDeviceManager.kt:171:12 'startBluetoothSco(): Unit' is deprecated. Deprecated in Java
+  3687	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/androidMain/kotlin/chat/simplex/common/views/call/CallAudioDeviceManager.kt:176:10 'stopBluetoothSco(): Unit' is deprecated. Deprecated in Java
+  3688	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/androidMain/kotlin/chat/simplex/common/views/call/CallAudioDeviceManager.kt:177:10 'setter for isWiredHeadsetOn: Boolean' is deprecated. Deprecated in Java
+  3689	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/androidMain/kotlin/chat/simplex/common/views/call/CallAudioDeviceManager.kt:178:10 'setter for isSpeakerphoneOn: Boolean' is deprecated. Deprecated in Java
+  3690	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/androidMain/kotlin/chat/simplex/common/views/call/CallView.android.kt:135:11 Name shadowed: call
+  3691	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/androidMain/kotlin/chat/simplex/common/views/call/CallView.android.kt:137:13 Name shadowed: callState
+  3692	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/androidMain/kotlin/chat/simplex/common/views/call/CallView.android.kt:322:8 'setter for isSpeakerphoneOn: Boolean' is deprecated. Deprecated in Java
+  3693	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/androidMain/kotlin/chat/simplex/common/views/call/CallView.android.kt:323:8 'stopBluetoothSco(): Unit' is deprecated. Deprecated in Java
+  3694	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/androidMain/kotlin/chat/simplex/common/views/chat/item/CIVideoView.android.kt:15:41 'AspectRatioFrameLayout' is deprecated. Deprecated in Java
+  3695	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/androidMain/kotlin/chat/simplex/common/views/chat/item/CIVideoView.android.kt:16:41 'StyledPlayerView' is deprecated. Deprecated in Java
+  3696	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/androidMain/kotlin/chat/simplex/common/views/chat/item/CIVideoView.android.kt:22:7 'StyledPlayerView' is deprecated. Deprecated in Java
+  3697	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/androidMain/kotlin/chat/simplex/common/views/chat/item/ImageFullScreenView.android.kt:23:41 'AspectRatioFrameLayout' is deprecated. Deprecated in Java
+  3698	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/androidMain/kotlin/chat/simplex/common/views/chat/item/ImageFullScreenView.android.kt:24:41 'StyledPlayerView' is deprecated. Deprecated in Java
+  3699	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/androidMain/kotlin/chat/simplex/common/views/chat/item/ImageFullScreenView.android.kt:47:7 'StyledPlayerView' is deprecated. Deprecated in Java
+  3700	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/androidMain/kotlin/chat/simplex/common/views/chat/item/ImageFullScreenView.android.kt:49:11 'AspectRatioFrameLayout' is deprecated. Deprecated in Java
+  3701	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/androidMain/kotlin/chat/simplex/common/views/chat/item/ImageFullScreenView.android.kt:51:11 'AspectRatioFrameLayout' is deprecated. Deprecated in Java
+  3702	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/androidMain/kotlin/chat/simplex/common/views/chatlist/UserPicker.android.kt:212:20 'swipeable(SwipeableState<T>, Map<Float, T>, Orientation, Boolean = ..., Boolean = ..., MutableInteractionSource? = ..., (from: T, to: T) -> ThresholdConfig = ..., ResistanceConfig? = ..., Dp = ...): Modifier' is deprecated. Material's Swipeable has been replaced by Foundation's AnchoredDraggable APIs. Please see developer.android.com for an overview of the changes and a migration guide.
+  3703	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/androidMain/kotlin/chat/simplex/common/views/chatlist/UserPicker.android.kt:215:26 'FractionalThreshold' is deprecated. Material's Swipeable has been replaced by Foundation's AnchoredDraggable APIs. Please see developer.android.com for an overview of the changes and a migration guide.
+  3704	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/androidMain/kotlin/chat/simplex/common/views/helpers/GetImageView.android.kt:76:49 Type mismatch: inferred type is String? but String was expected
+  3705	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/androidMain/kotlin/chat/simplex/common/views/helpers/GetImageView.android.kt:150:11 Name shadowed: uri
+  3706	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/androidMain/kotlin/chat/simplex/common/views/newchat/QRCodeScanner.android.kt:48:24 'LocalLifecycleOwner: ProvidableCompositionLocal<LifecycleOwner>' is deprecated. Moved to lifecycle-runtime-compose library in androidx.lifecycle.compose package.
+  3707	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/model/ChatModel.kt:2711:5 Parameter 'primaryColor' is never used
+  3708	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/model/ChatModel.kt:2713:5 Parameter 'paleMetaColor' is never used
+  3709	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/model/ChatModel.kt:2972:3 Class 'MsgReactionSerializer', which is serializer for type 'MsgReaction', is applied here to type 'MsgReaction.Emoji'. This may lead to errors or incorrect behavior.
+  3710	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/model/ChatModel.kt:2973:3 Class 'MsgReactionSerializer', which is serializer for type 'MsgReaction', is applied here to type 'MsgReaction.Unknown'. This may lead to errors or incorrect behavior.
+  3711	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/model/ChatModel.kt:3003:15 Condition 'emoji == null' is always 'false'
+  3712	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/model/CryptoFile.kt:37:27 This class shouldn't be used in Kotlin. Use kotlin.Int instead.
+  3713	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/model/SimpleXAPI.kt:581:7 Unsafe use of a nullable receiver of type File?
+  3714	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/model/SimpleXAPI.kt:3430:16 Condition 'encrypt == null' is always 'false'
+  3715	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/platform/Core.kt:112:7 Unsafe use of a nullable receiver of type File?
+  3716	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/platform/Core.kt:195:7 Variable 'res' is never used
+  3717	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/platform/Files.kt:95:3 Unsafe use of a nullable receiver of type File?
+  3718	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/platform/Files.kt:171:1 'expect'/'actual' classes (including interfaces, objects, annotations, enums, and 'actual' typealiases) are in Beta. You can use -Xexpect-actual-classes flag to suppress this warning. Also see: https://youtrack.jetbrains.com/issue/KT-61573
+  3719	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/platform/Files.kt:175:1 'expect'/'actual' classes (including interfaces, objects, annotations, enums, and 'actual' typealiases) are in Beta. You can use -Xexpect-actual-classes flag to suppress this warning. Also see: https://youtrack.jetbrains.com/issue/KT-61573
+  3720	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/platform/Log.kt:9:1 'expect'/'actual' classes (including interfaces, objects, annotations, enums, and 'actual' typealiases) are in Beta. You can use -Xexpect-actual-classes flag to suppress this warning. Also see: https://youtrack.jetbrains.com/issue/KT-61573
+  3721	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/platform/RecAndPlay.kt:17:1 'expect'/'actual' classes (including interfaces, objects, annotations, enums, and 'actual' typealiases) are in Beta. You can use -Xexpect-actual-classes flag to suppress this warning. Also see: https://youtrack.jetbrains.com/issue/KT-61573
+  3722	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/platform/RecAndPlay.kt:47:1 'expect'/'actual' classes (including interfaces, objects, annotations, enums, and 'actual' typealiases) are in Beta. You can use -Xexpect-actual-classes flag to suppress this warning. Also see: https://youtrack.jetbrains.com/issue/KT-61573
+  3723	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/platform/RecAndPlay.kt:61:1 'expect'/'actual' classes (including interfaces, objects, annotations, enums, and 'actual' typealiases) are in Beta. You can use -Xexpect-actual-classes flag to suppress this warning. Also see: https://youtrack.jetbrains.com/issue/KT-61573
+  3724	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/platform/RecAndPlay.kt:63:1 'expect'/'actual' classes (including interfaces, objects, annotations, enums, and 'actual' typealiases) are in Beta. You can use -Xexpect-actual-classes flag to suppress this warning. Also see: https://youtrack.jetbrains.com/issue/KT-61573
+  3725	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/platform/UI.kt:24:1 'expect'/'actual' classes (including interfaces, objects, annotations, enums, and 'actual' typealiases) are in Beta. You can use -Xexpect-actual-classes flag to suppress this warning. Also see: https://youtrack.jetbrains.com/issue/KT-61573
+  3726	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/platform/VideoPlayer.kt:25:1 'expect'/'actual' classes (including interfaces, objects, annotations, enums, and 'actual' typealiases) are in Beta. You can use -Xexpect-actual-classes flag to suppress this warning. Also see: https://youtrack.jetbrains.com/issue/KT-61573
+  3727	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/ui/theme/Theme.kt:762:18 Parameter 'darkTheme' is never used
+  3728	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/ui/theme/ThemeManager.kt:46:9 Name shadowed: perUserTheme
+  3729	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/ui/theme/ThemeManager.kt:69:9 Name shadowed: perUserTheme
+  3730	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/ui/theme/ThemeManager.kt:157:9 Name shadowed: type
+  3731	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/TerminalView.kt:203:11 Name shadowed: terminals
+  3732	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/chat/ChatInfoView.kt:65:7 Name shadowed: contact
+  3733	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/chat/ChatInfoView.kt:519:3 Parameter 'syncContactConnectionForce' is never used
+  3734	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/chat/ChatInfoView.kt:589:15 Name shadowed: chat
+  3735	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/chat/ChatItemInfoView.kt:527:23 Parameter 'chatModel' is never used
+  3736	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/chat/ChatItemsLoader.kt:203:7 Name shadowed: unreadInLoaded
+  3737	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/chat/ChatView.kt:244:23 Name shadowed: chatInfo
+  3738	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/chat/ChatView.kt:661:13 Name shadowed: remoteHostId
+  3739	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/chat/ChatView.kt:662:13 Name shadowed: chatInfo
+  3740	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/chat/ChatView.kt:1525:7 Name shadowed: chatId
+  3741	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/chat/ChatView.kt:1526:7 Name shadowed: loadItems
+  3742	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/chat/ChatView.kt:1527:7 Name shadowed: ignoreLoadingRequests
+  3743	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/chat/ComposeView.kt:436:9 Variable 'cInfo' is never used
+  3744	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/chat/ComposeView.kt:539:11 Name shadowed: cInfo
+  3745	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/chat/SendMsgView.kt:169:15 Name shadowed: cs
+  3746	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/chat/group/AddGroupMembersView.kt:293:31 Parameter 'index' is never used, could be renamed to _
+  3747	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/chat/group/GroupChatInfoView.kt:366:17 Name shadowed: chat
+  3748	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/chat/group/GroupChatInfoView.kt:530:67 Parameter 'onClick' is never used
+  3749	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/chat/group/GroupLinkView.kt:184:30 Parameter 'groupInfo' is never used
+  3750	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/chat/group/GroupMemberInfoView.kt:274:3 Parameter 'syncMemberConnectionForce' is never used
+  3751	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/chat/group/GroupProfileView.kt:64:7 Variable 'scrollState' is never used
+  3752	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/chat/item/CIGroupInvitationView.kt:28:3 Parameter 'memberRole' is never used
+  3753	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/chat/item/ChatItemView.kt:820:30 Parameter 'revealed' is never used
+  3754	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/chat/item/ChatItemView.kt:832:28 Parameter 'revealed' is never used
+  3755	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/chat/item/ChatItemView.kt:844:30 Parameter 'revealed' is never used
+  3756	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/chat/item/ChatItemView.kt:856:30 Parameter 'revealed' is never used
+  3757	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/chat/item/ChatItemView.kt:1093:5 'quadraticBezierTo(Float, Float, Float, Float): Unit' is deprecated. Use quadraticTo() for consistency with cubicTo()
+  3758	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/chat/item/ChatItemView.kt:1099:5 'quadraticBezierTo(Float, Float, Float, Float): Unit' is deprecated. Use quadraticTo() for consistency with cubicTo()
+  3759	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/chat/item/ChatItemView.kt:1106:7 'quadraticBezierTo(Float, Float, Float, Float): Unit' is deprecated. Use quadraticTo() for consistency with cubicTo()
+  3760	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/chat/item/ChatItemView.kt:1117:7 'quadraticBezierTo(Float, Float, Float, Float): Unit' is deprecated. Use quadraticTo() for consistency with cubicTo()
+  3761	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/chat/item/ChatItemView.kt:1125:5 'quadraticBezierTo(Float, Float, Float, Float): Unit' is deprecated. Use quadraticTo() for consistency with cubicTo()
+  3762	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/chat/item/ImageFullScreenView.kt:77:9 Name shadowed: index
+  3763	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/chatlist/ChatListView.kt:55:9 Name shadowed: close
+  3764	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/chatlist/ChatPreviewView.kt:353:15 Name shadowed: chat
+  3765	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/chatlist/ChatPreviewView.kt:473:40 Parameter 'currentUserProfileDisplayName' is never used
+  3766	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/chatlist/ServersSummaryView.kt:972:34 Parameter 'rh' is never used
+  3767	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/database/DatabaseEncryptionView.kt:332:25 'constructor KeyboardOptions(KeyboardCapitalization = ..., Boolean, KeyboardType = ..., ImeAction = ..., PlatformImeOptions? = ..., Boolean? = ..., LocaleList? = ...)' is deprecated. Please use the new constructor that takes optional autoCorrectEnabled parameter.
+  3768	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/helpers/ChatInfoImage.kt:31:107 Parameter 'shadow' is never used
+  3769	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/helpers/ChatWallpaper.kt:401:7 Name shadowed: image
+  3770	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/helpers/DefaultBasicTextField.kt:135:25 'constructor KeyboardOptions(KeyboardCapitalization = ..., Boolean, KeyboardType = ..., ImeAction = ..., PlatformImeOptions? = ..., Boolean? = ..., LocaleList? = ...)' is deprecated. Please use the new constructor that takes optional autoCorrectEnabled parameter.
+  3771	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/helpers/Enums.kt:42:1 @Serializer annotation has no effect on class 'UriSerializer', because all members of KSerializer are already overridden
+  3772	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/helpers/GestureDetector.kt:53:3 'forEachGesture(suspend PointerInputScope.() -> Unit): Unit' is deprecated. Use awaitEachGesture instead. forEachGesture() can drop events between gestures.
+  3773	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/helpers/GestureDetector.kt:59:14 'consumeDownChange(): Unit' is deprecated. Partial consumption has been deprecated. Use consume() instead.
+  3774	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/helpers/GestureDetector.kt:76:24 'consumeDownChange(): Unit' is deprecated. Partial consumption has been deprecated. Use consume() instead.
+  3775	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/helpers/GestureDetector.kt:96:3 'forEachGesture(suspend PointerInputScope.() -> Unit): Unit' is deprecated. Use awaitEachGesture instead. forEachGesture() can drop events between gestures.
+  3776	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/helpers/GestureDetector.kt:109:32 'consumeAllChanges(): Unit' is deprecated. Use consume() instead
+  3777	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/helpers/GestureDetector.kt:141:12 'consumed: ConsumedData' is deprecated. use isConsumed and consume() pair of methods instead
+  3778	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/helpers/GestureDetector.kt:141:21 'downChange: Boolean' is deprecated. Partial consumption was deprecated. Use PointerEvent.isConsumed and PointerEvent.consume() instead.
+  3779	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/helpers/GestureDetector.kt:147:39 'positionChangeConsumed(): Boolean' is deprecated. Partial consumption has been deprecated. Use isConsumed instead
+  3780	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/helpers/GestureDetector.kt:254:3 'forEachGesture(suspend PointerInputScope.() -> Unit): Unit' is deprecated. Use awaitEachGesture instead. forEachGesture() can drop events between gestures.
+  3781	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/helpers/ModalView.kt:72:62 Unchecked cast: MutableState<Any?> to MutableState<T>
+  3782	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/helpers/ModalView.kt:75:63 Unchecked cast: MutableState<Any?> to MutableState<T?>
+  3783	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/helpers/ModalView.kt:91:17 Parameter 'settings' is never used
+  3784	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/helpers/ModalView.kt:97:26 Parameter 'settings' is never used
+  3785	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/helpers/ModalView.kt:238:9 'with(ExitTransition): ContentTransform' is deprecated. Infix fun EnterTransition.with(ExitTransition) has been renamed to togetherWith
+  3786	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/helpers/ModalView.kt:248:9 'with(ExitTransition): ContentTransform' is deprecated. Infix fun EnterTransition.with(ExitTransition) has been renamed to togetherWith
+  3787	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/helpers/Modifiers.kt:37:19 'swipeable(SwipeableState<T>, Map<Float, T>, Orientation, Boolean = ..., Boolean = ..., MutableInteractionSource? = ..., (from: T, to: T) -> ThresholdConfig = ..., ResistanceConfig? = ..., Dp = ...): Modifier' is deprecated. Material's Swipeable has been replaced by Foundation's AnchoredDraggable APIs. Please see developer.android.com for an overview of the changes and a migration guide.
+  3788	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/helpers/Modifiers.kt:40:28 'FractionalThreshold' is deprecated. Material's Swipeable has been replaced by Foundation's AnchoredDraggable APIs. Please see developer.android.com for an overview of the changes and a migration guide.
+  3789	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/helpers/SimpleButton.kt:90:9 Name shadowed: modifier
+  3790	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/helpers/TextEditor.kt:68:25 'constructor KeyboardOptions(KeyboardCapitalization = ..., Boolean, KeyboardType = ..., ImeAction = ..., PlatformImeOptions? = ..., Boolean? = ..., LocaleList? = ...)' is deprecated. Please use the new constructor that takes optional autoCorrectEnabled parameter.
+  3791	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/helpers/ThemeModeEditor.kt:36:9 Name shadowed: applyToMode
+  3792	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/helpers/ThemeModeEditor.kt:232:9 Name shadowed: applyToMode
+  3793	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/helpers/ThemeModeEditor.kt:273:13 Name shadowed: currentTheme
+  3794	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/helpers/ThemeModeEditor.kt:481:13 Name shadowed: theme
+  3795	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/helpers/Utils.kt:313:3 Unsafe use of a nullable receiver of type File?
+  3796	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/migration/MigrateToDevice.kt:414:7 Name shadowed: currentKey
+  3797	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/newchat/ConnectPlan.kt:32:7 Name shadowed: close
+  3798	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/newchat/ConnectPlan.kt:37:7 Name shadowed: cleanup
+  3799	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/newchat/ContactConnectionInfoView.kt:84:3 Parameter 'share' is never used
+  3800	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/newchat/NewChatSheet.kt:801:11 Name shadowed: tint
+  3801	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/newchat/NewChatView.kt:50:7 Name shadowed: selection
+  3802	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/newchat/NewChatView.kt:51:7 Name shadowed: showQRCodeScanner
+  3803	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/onboarding/ChooseServerOperators.kt:379:41 Parameter 'close' is never used, could be renamed to _
+  3804	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/usersettings/Appearance.kt:273:9 Name shadowed: backgroundColor
+  3805	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/usersettings/Appearance.kt:274:9 Name shadowed: tintColor
+  3806	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/usersettings/Appearance.kt:712:17 Name shadowed: theme
+  3807	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/usersettings/PrivacySettings.kt:264:49 Elvis operator (?:) always returns the left operand of non-nullable type Boolean
+  3808	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/usersettings/PrivacySettings.kt:272:52 Elvis operator (?:) always returns the left operand of non-nullable type Boolean
+  3809	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/usersettings/PrivacySettings.kt:410:146 Name shadowed: laResult
+  3810	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/usersettings/SettingsView.kt:89:3 Parameter 'showSettingsModalWithSearch' is never used
+  3811	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/usersettings/UserAddressLearnMore.kt:63:53 Parameter 'close' is never used, could be renamed to _
+  3812	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/usersettings/UserAddressView.kt:39:7 Name shadowed: shareViaProfile
+  3813	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/usersettings/UserAddressView.kt:49:63 Unnecessary safe call on a non-null receiver of type MutableState<User?>
+  3814	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/usersettings/UserAddressView.kt:64:74 Unnecessary safe call on a non-null receiver of type MutableState<User?>
+  3815	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/usersettings/UserAddressView.kt:117:69 Unnecessary safe call on a non-null receiver of type MutableState<User?>
+  3816	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/usersettings/UserAddressView.kt:131:72 Unnecessary safe call on a non-null receiver of type MutableState<User?>
+  3817	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/usersettings/UserAddressView.kt:172:3 Parameter 'sendEmail' is never used
+  3818	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/usersettings/networkAndServers/AdvancedNetworkSettings.kt:181:3 Parameter 'developerTools' is never used
+  3819	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/usersettings/networkAndServers/AdvancedNetworkSettings.kt:188:3 Parameter 'networkRcvConcurrency' is never used
+  3820	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/usersettings/networkAndServers/NetworkAndServers.kt:297:3 Parameter 'developerTools' is never used
+  3821	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/usersettings/networkAndServers/NetworkAndServers.kt:660:47 Parameter 'close' is never used, could be renamed to _
+  3822	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/usersettings/networkAndServers/NewServerView.kt:93:3 Parameter 'scope' is never used
+  3823	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/usersettings/networkAndServers/NewServerView.kt:96:3 Parameter 'serverErrors' is never used
+  3824	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/usersettings/networkAndServers/NewServerView.kt:97:3 Parameter 'rhId' is never used
+  3825	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/usersettings/networkAndServers/OperatorView.kt:145:7 Variable 'scope' is never used
+  3826	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/usersettings/networkAndServers/OperatorView.kt:512:3 Parameter 'serverErrors' is never used
+  3827	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/usersettings/networkAndServers/OperatorView.kt:521:72 Parameter 'operatorIndexToEnable' is never used
+  3828	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/usersettings/networkAndServers/OperatorView.kt:558:38 Parameter 'close' is never used
+  3829	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/usersettings/networkAndServers/ProtocolServerView.kt:38:3 Parameter 'serverErrors' is never used
+  3830	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/common/src/commonMain/kotlin/chat/simplex/common/views/usersettings/networkAndServers/ProtocolServerView.kt:42:3 Parameter 'rhId' is never used
+  3831	
+  3832	> Task :common:compileReleaseJavaWithJavac NO-SOURCE
+  3833	> Task :common:processReleaseJavaRes
+  3834	> Task :common:bundleLibRuntimeToJarRelease
+  3835	> Task :common:bundleLibCompileToJarRelease
+  3836	> Task :common:extractReleaseAnnotations
+  3837	> Task :common:createFullJarRelease
+  3838	> Task :common:mergeReleaseGeneratedProguardFiles
+  3839	> Task :common:mergeReleaseConsumerProguardFiles
+  3840	> Task :common:mergeReleaseJavaResource
+  3841	> Task :common:generateReleaseLintVitalModel
+  3842	
+  3843	> Task :android:compileReleaseKotlin
+  3844	w: Opt-in requirement marker com.google.accompanist.insets.ExperimentalAnimatedInsets is unresolved. Please make sure it's present in the module dependencies
+  3845	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/android/src/main/java/chat/simplex/app/MainActivity.kt:29:43 'SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN: Int' is deprecated. Deprecated in Java
+  3846	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/android/src/main/java/chat/simplex/app/MainActivity.kt:105:16 This declaration overrides deprecated member but not marked as deprecated itself. Please add @Deprecated annotation or suppress. See https://youtrack.jetbrains.com/issue/KT-47902 for details
+  3847	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/android/src/main/java/chat/simplex/app/MainActivity.kt:113:13 'onBackPressed(): Unit' is deprecated. This method has been deprecated in favor of using the
+  3848	      {@link OnBackPressedDispatcher} via {@link #getOnBackPressedDispatcher()}.
+  3849	      The OnBackPressedDispatcher controls how back button events are dispatched
+  3850	      to one or more {@link OnBackPressedCallback} objects.
+  3851	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/android/src/main/java/chat/simplex/app/MainActivity.kt:180:28 'getParcelableExtra(String!): T?' is deprecated. Deprecated in Java
+  3852	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/android/src/main/java/chat/simplex/app/MainActivity.kt:191:28 'getParcelableExtra(String!): T?' is deprecated. Deprecated in Java
+  3853	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/android/src/main/java/chat/simplex/app/MainActivity.kt:198:28 'getParcelableExtra(String!): T?' is deprecated. Deprecated in Java
+  3854	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/android/src/main/java/chat/simplex/app/MainActivity.kt:213:29 'getParcelableArrayListExtra(String!): ArrayList<T!>?' is deprecated. Deprecated in Java
+  3855	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/android/src/main/java/chat/simplex/app/MainActivity.kt:213:90 Unchecked cast: ArrayList<Parcelable!>? to List<Uri>
+  3856	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/android/src/main/java/chat/simplex/app/SimplexApp.kt:165:34 'REPLACE' is deprecated. Deprecated in favor of the UPDATE policy. UPDATE policy has very similar behavior: next run of the worker with the same unique name, going to have new specification. However, UPDATE has better defaults: unlike REPLACE policy UPDATE won't cancel the worker if it is currently running and new worker specification will be used only on the next run. Also it preserves original enqueue time, so unlike REPLACE period isn't reset. If you want to preserve previous behavior, CANCEL_AND_REENQUEUE should be used.
+  3857	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/android/src/main/java/chat/simplex/app/SimplexApp.kt:291:48 'getWindowInsetsController(View): WindowInsetsControllerCompat?' is deprecated. Deprecated in Java
+  3858	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/android/src/main/java/chat/simplex/app/SimplexApp.kt:300:28 'setter for systemUiVisibility: Int' is deprecated. Deprecated in Java
+  3859	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/android/src/main/java/chat/simplex/app/SimplexApp.kt:301:18 'SYSTEM_UI_FLAG_LIGHT_STATUS_BAR: Int' is deprecated. Deprecated in Java
+  3860	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/android/src/main/java/chat/simplex/app/SimplexApp.kt:301:58 'SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR: Int' is deprecated. Deprecated in Java
+  3861	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/android/src/main/java/chat/simplex/app/SimplexApp.kt:303:18 'SYSTEM_UI_FLAG_LIGHT_STATUS_BAR: Int' is deprecated. Deprecated in Java
+  3862	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/android/src/main/java/chat/simplex/app/SimplexApp.kt:305:18 'SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR: Int' is deprecated. Deprecated in Java
+  3863	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/android/src/main/java/chat/simplex/app/SimplexApp.kt:330:23 'checkOpNoThrow(String, Int, String): Int' is deprecated. Deprecated in Java
+  3864	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/android/src/main/java/chat/simplex/app/SimplexService.kt:75:7 'stopForeground(Boolean): Unit' is deprecated. Deprecated in Java
+  3865	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/android/src/main/java/chat/simplex/app/views/call/CallActivity.kt:131:13 'onBackPressed(): Unit' is deprecated. This method has been deprecated in favor of using the
+  3866	      {@link OnBackPressedDispatcher} via {@link #getOnBackPressedDispatcher()}.
+  3867	      The OnBackPressedDispatcher controls how back button events are dispatched
+  3868	      to one or more {@link OnBackPressedCallback} objects.
+  3869	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/android/src/main/java/chat/simplex/app/views/call/CallActivity.kt:151:7 'enterPictureInPictureMode(): Unit' is deprecated. Deprecated in Java
+  3870	w: file:///home/vagrant/build/chat.simplex.app/apps/multiplatform/android/src/main/java/chat/simplex/app/views/call/CallActivity.kt:226:24 'enterPictureInPictureMode(): Unit' is deprecated. Deprecated in Java
+  3871	
+  3872	> Task :common:syncReleaseLibJars
+  3873	> Task :android:compileReleaseJavaWithJavac
+  3874	> Task :common:bundleReleaseLocalLintAar
+  3875	> Task :common:bundleLibRuntimeToDirRelease
+  3876	> Task :common:lintVitalAnalyzeRelease
+  3877	> Task :android:dexBuilderRelease
+  3878	> Task :common:generateReleaseLintModel
+  3879	> Task :android:generateReleaseLintVitalReportModel
+  3880	> Task :android:mergeReleaseGlobalSynthetics
+  3881	> Task :android:processReleaseJavaRes
+  3882	> Task :android:mergeReleaseJavaResource
+  3883	> Task :android:lintVitalAnalyzeRelease
+  3884	> Task :android:mergeDexRelease
+  3885	> Task :android:compileReleaseArtProfile
+  3886	> Task :android:lintVitalReportRelease
+  3887	> Task :android:lintVitalRelease
+  3888	> Task :android:packageRelease
+  3889	> Task :android:createReleaseApkListingFileRedirect
+  3890	> Task :android:assembleRelease
+  3891	
+  3892	Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+  3893	
+  3894	You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+  3895	
+  3896	For more on this, please refer to https://docs.gradle.org/8.7/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+  3897	
+  3898	BUILD SUCCESSFUL in 15m 24s
+  3899	100 actionable tasks: 94 executed, 6 up-to-date
+  3900	Simplex-chat was successfully compiled: /home/vagrant/build/chat.simplex.app/simplex-chat-*.apk
+  3901	Delete nix and gradle caches with "rm -rf /nix && rm $HOME/.nix* && $HOME/.gradle/caches" in case if no longer needed.
+  3902	2025-01-15 23:27:37,796 DEBUG: Popen(['git', 'cat-file', '--batch-check'], cwd=/home/vagrant/build/chat.simplex.app, universal_newlines=False, shell=None, istream=<valid stream>)
+  3903	2025-01-15 23:27:37,860 INFO: Successfully built version 6.2.4 of chat.simplex.app from 2c8e33749e48a4d6efff43fac96cba15f5dcba1a
+  3904	2025-01-15 23:27:38,797 DEBUG: Checking build/chat.simplex.app/simplex-chat-armeabi-v7a.apk
+  3905	2025-01-15 23:27:39,049 INFO: success: chat.simplex.app
+  3906	2025-01-15 23:27:39,050 INFO: Finished
+  3907	2025-01-15 23:27:39,050 INFO: 1 build succeeded

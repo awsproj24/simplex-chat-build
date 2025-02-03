@@ -1,0 +1,156 @@
+
+
+2025-1-30
+
+toc: 
+    [1] build error with xml versions: 
+    [2] build errors with lib so files: 
+    [3] copy in the lib so files from f-droid build 268 and 269:
+    [4] failed to transform core-for-system-modules.jar
+    [5] switch jdk from 21 to 17
+    [6] rebuild
+
+
+
+[1] build error with xml versions: 
+
+    when the project is first time opened.
+    when invalidated cache, and opened the project again.
+    got an xml parsing error about version 3 or version 4.
+
+> Task :android:configureCMakeDebug[arm64-v8a]
+[CXX5304] This version only understands SDK XML versions up to 3 but an SDK XML file of version 4 was encountered. This can happen if you use versions of Android Studio and the command-line tools that were released at different times.
+[CXX5304] This version only understands SDK XML versions up to 3 but an SDK XML file of version 4 was encountered. This can happen if you use versions of Android Studio and the command-line tools that were released at different times.
+
+search android studio This version only understands SDK XML versions up to 3 but an SDK XML file of version 4 was encounter
+
+https://stackoverflow.com/questions/70368175/why-am-i-getting-this-warning-and-how-to-resolve-it-this-version-only-understan
+
+it looks like this error does not fail the build.
+
+
+
+[2] build errors with lib so files: 
+
+FAILURE: Build completed with 3 failures.
+
+1: Task failed with an exception.
+-----------
+* What went wrong:
+Execution failed for task ':android:buildCMakeDebug[arm64-v8a]'.
+> com.android.ide.common.process.ProcessException: ninja: Entering directory `C:\Users\you\AndroidStudioProjects\simplex-chat\apps\multiplatform\android\.cxx\Debug\6p2o445g\arm64-v8a'
+
+  C++ build system [build] failed while executing:
+      @echo off
+      "C:\\Users\\you\\AppData\\Local\\Android\\Sdk\\cmake\\3.22.1\\bin\\ninja.exe" ^
+        -C ^
+        "C:\\Users\\you\\AndroidStudioProjects\\simplex-chat\\apps\\multiplatform\\android\\.cxx\\Debug\\6p2o445g\\arm64-v8a" ^
+        app-lib
+    from C:\Users\you\AndroidStudioProjects\simplex-chat\apps\multiplatform\android
+  ninja: error: 'C:/Users/you/AndroidStudioProjects/simplex-chat/apps/multiplatform/common/src/commonMain/cpp/android/libs/arm64-v8a/libsimplex.so', needed by 'C:/Users/you/AndroidStudioProjects/simplex-chat/apps/multiplatform/android/build/intermediates/cxx/Debug/6p2o445g/obj/arm64-v8a/libapp-lib.so', missing and no known rule to make it
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+==============================================================================
+
+2: Task failed with an exception.
+-----------
+* What went wrong:
+Execution failed for task ':android:buildCMakeDebug[armeabi-v7a]'.
+> com.android.ide.common.process.ProcessException: ninja: Entering directory `C:\Users\you\AndroidStudioProjects\simplex-chat\apps\multiplatform\android\.cxx\Debug\6p2o445g\armeabi-v7a'
+
+  C++ build system [build] failed while executing:
+      @echo off
+      "C:\\Users\\you\\AppData\\Local\\Android\\Sdk\\cmake\\3.22.1\\bin\\ninja.exe" ^
+        -C ^
+        "C:\\Users\\you\\AndroidStudioProjects\\simplex-chat\\apps\\multiplatform\\android\\.cxx\\Debug\\6p2o445g\\armeabi-v7a" ^
+        app-lib
+    from C:\Users\you\AndroidStudioProjects\simplex-chat\apps\multiplatform\android
+  ninja: error: 'C:/Users/you/AndroidStudioProjects/simplex-chat/apps/multiplatform/common/src/commonMain/cpp/android/libs/armeabi-v7a/libsimplex.so', needed by 'C:/Users/you/AndroidStudioProjects/simplex-chat/apps/multiplatform/android/build/intermediates/cxx/Debug/6p2o445g/obj/armeabi-v7a/libapp-lib.so', missing and no known rule to make it
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+==============================================================================
+
+3: Task failed with an exception.
+-----------
+* What went wrong:
+Execution failed for task ':android:compileDebugJavaWithJavac'.
+> Could not resolve all files for configuration ':android:androidJdkImage'.
+   > Failed to transform core-for-system-modules.jar to match attributes {artifactType=_internal_android_jdk_image, org.gradle.libraryelements=jar, org.gradle.usage=java-runtime}.
+      > Execution failed for JdkImageTransform: C:\Users\you\AppData\Local\Android\Sdk\platforms\android-34\core-for-system-modules.jar.
+         > Error while executing process C:\Users\you\Downloads\android-studio-2024.2.2.13-windows\android-studio\jbr\bin\jlink.exe with arguments {--module-path C:\Users\you\.gradle\caches\transforms-4\43546650d5c180f08bd8dcc56e580d89-bf72a292-a209-45dd-9cd3-f5fe44bfe2f9\transformed\output\temp\jmod --add-modules java.base --output C:\Users\you\.gradle\caches\transforms-4\43546650d5c180f08bd8dcc56e580d89-bf72a292-a209-45dd-9cd3-f5fe44bfe2f9\transformed\output\jdkImage --disable-plugin system-modules}
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+==============================================================================
+
+
+
+[3] copy in the lib so files from f-droid build 268 and 269:
+
+$ pwd
+~/AndroidStudioProjects/simplex-chat/apps/multiplatform/common/src/commonMain/cpp/android/libs
+
+$ find . -type f | xargs ls -l
+-rw-r--r--   181646872 Dec 31  1980 ./arm64-v8a/libsimplex.so
+-rw-r--r--    14650736 Dec 31  1980 ./arm64-v8a/libsupport.so
+-rw-r--r--   169389340 Dec 31  1980 ./armeabi-v7a/libsimplex.so
+-rw-r--r--    12322828 Dec 31  1980 ./armeabi-v7a/libsupport.so
+
+
+
+[4] failed to transform core-for-system-modules.jar
+
+> Task :android:compileDebugJavaWithJavac FAILED
+Execution failed for task ':android:compileDebugJavaWithJavac'.
+> Could not resolve all files for configuration ':android:androidJdkImage'.
+   > Failed to transform core-for-system-modules.jar to match attributes {artifactType=_internal_android_jdk_image, org.gradle.libraryelements=jar, org.gradle.usage=java-runtime}.
+      > Execution failed for JdkImageTransform: C:\Users\you\AppData\Local\Android\Sdk\platforms\android-34\core-for-system-modules.jar.
+         > Error while executing process C:\Users\you\Downloads\android-studio-2024.2.2.13-windows\android-studio\jbr\bin\jlink.exe with arguments {--module-path C:\Users\you\.gradle\caches\transforms-4\c7f99529e6a5985f41753c3a55d5cc9e-8a59ac6b-486b-455b-b5d8-bb997bb8ff34\transformed\output\temp\jmod --add-modules java.base --output C:\Users\you\.gradle\caches\transforms-4\c7f99529e6a5985f41753c3a55d5cc9e-8a59ac6b-486b-455b-b5d8-bb997bb8ff34\transformed\output\jdkImage --disable-plugin system-modules}
+
+
+
+[5] switch jdk from 21 to 17
+
+Executing tasks: [:common:assembleDebugUnitTest, :common:assembleDebug, :common:assembleDebugAndroidTest, :common:assemble, 
+    :android:assembleDebugAndroidTest, :android:assembleDebug, :android:assembleDebugUnitTest] in project 
+    C:\Users\you\AndroidStudioProjects\simplex-chat\apps\multiplatform
+
+running these three tasks for almost 1h10m, then hit a heap not enough on all three: 
+> Task :common:compileDebugKotlinAndroid
+> Task :common:compileReleaseKotlinAndroid
+> Task :common:compileKotlinDesktop
+
+running again, only one's hitting heap error. 
+
+added  kotlin.daemon.jvmargs=-Xmx2048m  per screen prompt, run again, finished in 5m.
+probably no need to add this. just retry the build it might have worked. it might have failed due to 3 in parallel.
+
+since here we found it's building for desktop and release, we remove them in the seciton [6] below.
+as a note, here it built for 1h10m failed the first time, then 59m failed the 2nd time, then about 5m.
+after removing desktop and release, it builds for 5m and finished. 
+
+
+
+[6] rebuild
+
+edit: remove the sections for "desktopMain" and "desktopTest" in common/build.gradle.kts .
+      remove the two "release" sections in androind/build.gradle.kts .
+      remove the ":desktop" from settings.gradle.kts , we've done this since [1].
+select in ide: the build variants, select arm64-v8a for active abi .
+
+when build it shows at the beginning to build for only one task: 
+Executing tasks: [:android:assembleDebug] in project
+
+
+

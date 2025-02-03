@@ -1,0 +1,8 @@
+
+$ find . -type f -name '*.so' | xargs sha256sum
+cd594e2ba7609a6debe8915f3d400800473cbd48d06b2dd5ddc6c7052bca4450 *./arm64-v8a/libsimplex.so
+a7763346862ee8372045b860fc28f21285b6bbf53d911cb41351f8a8e5e5a0ce *./arm64-v8a/libsupport.so
+8985efd6b515527afb2db73cd969f874a638ba341de4cf5dba97eb5cf907588d *./armeabi-v7a/libsimplex.so
+4f4c75328c3e514524bc42a5d863e0d87c3b8ba1d84bbf1b5bc5f81fb765e402 *./armeabi-v7a/libsupport.so
+
+
