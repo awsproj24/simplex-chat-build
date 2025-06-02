@@ -1,0 +1,102 @@
+
+toc:
+    android studio
+        sdk
+	avd
+	emulator
+	emulator upgrade
+    simplex code repo
+    app id
+        rebuild from scratch
+
+
+android studio: 
+
+  version 2024-2.2.13 built on dec 17 2024
+
+ sdk: Android 15.0 api 35
+ avd image:
+  Android 14.0 x86_64
+  desktop size 8.0" 1080x800 mdpi
+  ram 2048MB
+  xABI arm64-v8a
+  api 34
+  system image x86_64 (translated: arm64-v8a)
+ emulator : 35.3.11
+ emulator hypervisor driver: 2.2.0
+ platform-tools: 35.0.2
+
+ emulator upgrade: 35.5.10 from developer.android.com/studio/emulator_archive
+      note that the earlier emulator hangs the host windows system when running chrome
+
+
+simplex code repo: 
+
+  $ git log -4 --stat
+  commit 6d1d13e9eb98205b2f7de6e7f01a3109dea6afd7 (HEAD -> example-user-1)
+  Author: you <you@example.com>
+  Date:   Thu Feb 6 19:27:42 2025 -0800
+    example-user-1 attempt build 3
+
+   apps/multiplatform/android/build.gradle.kts | 18 +++++++--------
+   apps/multiplatform/common/build.gradle.kts  | 36 ++++++++++++++---------------
+   apps/multiplatform/settings.gradle.kts      |  2 +-
+   3 files changed, 28 insertions(+), 28 deletions(-)
+
+  commit 2878c32fcc74eb2f1a64a0c254117c74dfa794d6
+  Author: you <you@example.com>
+  Date:   Thu Feb 6 19:27:06 2025 -0800
+      branch example-user-1 base
+
+  commit 2c8e33749e48a4d6efff43fac96cba15f5dcba1a (tag: v6.2.4-armv7a, origin/stable-android, stable-android)
+  Merge: 6d55518c1 161143add
+  Author: Evgeny Poberezkin <evgeny@poberezkin.com>
+  Date:   Mon Jan 13 08:41:11 2025 +0000
+      Merge branch 'stable' into stable-android
+ 
+  commit 161143add0b98e34b85db63fe78b46ccb03539a1 (tag: v6.2.4)
+  Author: Evgeny Poberezkin <evgeny@poberezkin.com>
+  Date:   Mon Jan 13 00:47:09 2025 +0000
+      6.2.4: ios 259, android 268, desktop 87
+
+   apps/ios/SimpleX.xcodeproj/project.pbxproj | 56 +++++++++++++++---------------
+   apps/multiplatform/gradle.properties       |  8 ++---
+   2 files changed, 32 insertions(+), 32 deletions(-)
+
+ tags: 
+  $ git tag -n1
+  v6.2.4          6.2.4: ios 259, android 268, desktop 87
+  v6.2.4-armv7a   Merge branch 'stable' into stable-android
+
+
+rebuild:
+    after 3+ months, reopen the project in studio, it took more than 10 minutes to resync.
+    rebuild it, it took 15 minutes.
+
+
+app id:
+
+    change the apps/multipleplatform/local.properties to specify the app id.
+    after changing, rebuild project.
+    the studio can install the new built app but will attempt to launch debug by the old app name.
+
+  rebuild from scratch: 
+
+    blow out all content from the source directory. 
+    git reset hard.
+    open project, change jdk from 21 to 17.
+    modify local.properties to set a new app id.
+    select the "android" module and click "make selected modules".
+
+    failed the two arm targets, 
+    and ":common:compileKotlinDesktop". it took 9 minutes.
+	under multiplatform/common/build/kotlin,
+        it did compileKotlinDesktop, and compileReleaseKotlinAndroid, too. 
+	and failed the desktop one.
+
+    re-enable the section for "dekstopMain" in multiplatform/common/build.gradle.kts, 
+    do a gradle sync to download packages, disable the section, and build again. it builds ok. 
+    can launch the debugger on emulator.
+    but it hits a SIGVTALARM immediately. if not debugging, the app works on gui.
+
+

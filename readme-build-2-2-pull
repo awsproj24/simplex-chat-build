@@ -1,0 +1,46 @@
+
+
+git pull and re-apply the patch
+
+
+
+git pull:
+
+ * [new tag]             v6.3.4                  -> v6.3.4
+ * [new tag]             v6.3.4-armv7a           -> v6.3.4-armv7a
+
+
+$ git branch -av --contains v6.3.4-armv7a
+  remotes/origin/master-android 6fb727328 Merge branch 'master' into master-android
+
+
+$ git log -2 --stat v6.3.4-armv7a
+  commit f238b5370c666818d702f8f4b6cb407f0b454bec (tag: v6.3.4-armv7a)
+  Merge: 7201a6f35 8af3cb935
+  Author: Evgeny Poberezkin <evgeny@poberezkin.com>
+  Date:   Tue May 13 18:54:33 2025 +0100
+      Merge branch 'master' into master-android
+
+  commit 8af3cb935eeaae2f644ddc9e61ddb314d464eea4 (tag: v6.3.4)
+  Author: Evgeny Poberezkin <evgeny@poberezkin.com>
+  Date:   Tue May 13 18:53:37 2025 +0100
+      6.3.4: android 288, desktop 101
+
+   apps/multiplatform/gradle.properties | 4 ++--
+   1 file changed, 2 insertions(+), 2 deletions(-)
+
+
+$ git checkout -b user2base v6.3.4-armv7a
+$ git commit --allow-empty -m 'branch example-user-2 base'
+
+$ git branch -v
+  example-user-1 6d1d13e9e example-user-1 attempt build 3
+  master-android 6fb727328 Merge branch 'master' into master-android
+  stable         7b362ff65 ui: label in compose when user cannot send messages (#5922)
+  stable-android a50aa9c6d Merge branch 'stable' into stable-android
+* user2base      81b40eeb3 branch example-user-2 base
+
+$ git cherry-pick 6d1d13e9e
+
+
+

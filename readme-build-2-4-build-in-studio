@@ -1,0 +1,43 @@
+
+
+select the top-level directory in the left navigation pane for project.
+click "make selected modules" from toolbar.
+
+
+the build output shows it is building for: 
+
+    Executing tasks: [:common:assembleDebug, :common:assembleDebugUnitTest, :common:assembleDebugAndroidTest, 
+                      :android:assembleDebugAndroidTest, 
+		      :common:assemble, 
+		      :android:assembleDebug, :android:assembleDebugUnitTest]
+
+
+similar to the prev rebuild, 
+
+  this task below keeps building for 15 minutes and ok: 
+
+    :common:compileDebugKotlinAndroid
+
+  this task below keeps building for 13 minutes and and failed with kotlin daemon, 
+  then it falls back to no daemon and results ok in another 10 minutes, 
+  (but why it needs to build this "release" at all? turned out selected wrong module.): 
+
+    :common:compileReleaseKotlinAndroid
+
+  and this failed after 5 minutes, 
+  (same why it needs to build at all? turned out selected wrong module.):
+
+    :common:compileKotlinDesktop
+
+
+change the left navigation pane to android. select the top android node. 
+click "make module 'app.android'" in the toolbar. 
+it finishes quickly despite the previous failures when using the project navigation pane.
+the build output shows it is building for: 
+
+    Executing tasks: [:android:assembleDebug, :android:assembleDebugUnitTest, :android:assembleDebugAndroidTest]
+
+this time it selected the right module to build.
+
+
+
